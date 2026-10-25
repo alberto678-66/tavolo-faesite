@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Famiglia Tavolo · Gestionali per ristoranti, pasticcerie, saloni e locali a Catania</title>
+<meta name="description" content="Tavolo, Vassoio, Poltrona e Bancone: quattro gestionali per ristoranti, pasticcerie, saloni e locali notturni. Funzionano sul Wi-Fi del locale, anche senza internet. Installazione e assistenza a Catania.">
+<meta name="theme-color" content="#141518">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Famiglia Tavolo · Il gestionale che parla la lingua del tuo mestiere">
+<meta property="og:description" content="Quattro gestionali per quattro mestieri. Installazione e assistenza a Catania. 30 giorni di prova.">
+<meta property="og:locale" content="it_IT">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141518'/%3E%3Crect x='12' y='12' width='18' height='18' rx='5' fill='%233FA37A'/%3E%3Crect x='34' y='12' width='18' height='18' rx='5' fill='%23E07A52'/%3E%3Crect x='12' y='34' width='18' height='18' rx='5' fill='%23C975B2'/%3E%3Crect x='34' y='34' width='18' height='18' rx='5' fill='%23F2B33D'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Famiglia Tavolo","areaServed":"Catania","telephone":"+39 349 699 1941","email":"teampvtads@gmail.com","sameAs":["https://www.instagram.com/hellotavolo/","https://www.tiktok.com/@hellotavolo_it"],
+"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Tavolo","applicationCategory":"BusinessApplication"}},{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Vassoio","applicationCategory":"BusinessApplication"}},{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Poltrona","applicationCategory":"BusinessApplication"}},{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Bancone","applicationCategory":"BusinessApplication"}}]}
+</script>
+<style>
+/* Concetto: pietra lavica di Catania (scuro, granuloso) per l'apertura e le sezioni forti, cenere chiara per leggere.
+   Ogni prodotto ha il suo colore pieno; le demo dentro la pagina si toccano davvero. */
+:root{
+  --lava:#141518; --lava-2:#1C1E22; --lava-3:#2A2D33; --cenere:#EEEDE9; --carta:#F8F7F4; --linea:#D9D7D0; --linea-s:#34373E;
+  --ink:#121316; --muto:#5E6067; --muto-s:#A3A6AD;
+  --tavolo:#3FA37A; --vassoio:#E07A52; --poltrona:#C975B2; --bancone:#F2B33D;
+  --tavolo-d:#257652; --vassoio-d:#A94A28; --poltrona-d:#8E3F7C; --bancone-d:#8F6200;
+  --wa:#1FA855;
+  --display:"Syne","Arial Black",system-ui,sans-serif;
+  --body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gut:max(20px,env(safe-area-inset-left,0px));
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{margin:0;background:var(--cenere);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--bancone);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:var(--gut);padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:.98;letter-spacing:-.02em;text-wrap:balance}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.lava{background:var(--lava);color:#F2F1EE;position:relative;isolation:isolate}
+.lava::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:15px 24px;font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s var(--ease),background .2s,box-shadow .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-chiaro{background:#F2F1EE;color:var(--lava)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 10px 30px -10px rgba(31,168,85,.7)}
+.btn-linea{border:1.5px solid currentColor;background:transparent}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* ---------- navigazione ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .3s,backdrop-filter .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.su{background:rgba(20,21,24,.78);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border-color:rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px;color:#F2F1EE}
+.marchio{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.01em}
+.quad{display:grid;grid-template-columns:1fr 1fr;gap:3px;width:28px;height:28px;flex:none}
+.quad i{border-radius:5px;transition:transform .4s var(--ease)}
+.marchio:hover .quad i:nth-child(1){transform:translate(-2px,-2px)}.marchio:hover .quad i:nth-child(2){transform:translate(2px,-2px)}.marchio:hover .quad i:nth-child(3){transform:translate(-2px,2px)}.marchio:hover .quad i:nth-child(4){transform:translate(2px,2px)}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-weight:600;font-size:15px}
+.nav ul a{text-decoration:none;opacity:.72;transition:opacity .2s}
+.nav ul a:hover{opacity:1}
+.nav .btn{padding:10px 18px;font-size:14.5px}
+
+/* ---------- apertura ---------- */
+.hero{padding-top:calc(130px + env(safe-area-inset-top,0px));padding-bottom:0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:56px;align-items:center}
+.hero .eyebrow{color:var(--muto-s);display:flex;align-items:center;gap:10px}
+.hero .eyebrow .pt{width:8px;height:8px;border-radius:50%;background:var(--tavolo);box-shadow:0 0 0 0 var(--tavolo);animation:pulsa 2s infinite}
+@keyframes pulsa{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero h1{font-size:clamp(42px,6.4vw,92px);font-weight:800;margin-top:22px;letter-spacing:-.035em}
+.hero h1 .giro{display:block;height:1.08em;overflow:hidden;position:relative;font-size:.9em}
+.hero h1 .giro span{display:inline-block;white-space:nowrap;transition:transform .7s var(--ease),opacity .5s;color:var(--c,var(--tavolo))}
+.hero .sotto{font-size:clamp(18px,1.6vw,21px);color:#C9CBD0;max-width:52ch;margin-top:26px}
+.hero .azioni{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.prove{display:flex;gap:28px;flex-wrap:wrap;margin-top:44px;padding-top:26px;border-top:1px solid var(--linea-s);max-width:560px}
+.prove div{font-size:14px;color:var(--muto-s)}
+.prove b{display:block;font-family:var(--display);font-size:24px;color:#F2F1EE;letter-spacing:-.01em}
+
+/* tablet */
+.scena{perspective:1600px;position:relative;min-width:0}
+.alone{position:absolute;inset:8% 0 -10% 0;background:radial-gradient(closest-side,var(--c,var(--tavolo)),transparent);opacity:.32;filter:blur(40px);transition:background .8s;z-index:0}
+.tablet{position:relative;z-index:1;transform:rotateY(-14deg) rotateX(6deg) rotateZ(1deg);transform-style:preserve-3d;transition:transform .9s var(--ease);background:#0B0C0E;border-radius:30px;padding:14px;box-shadow:0 60px 100px -40px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.08) inset}
+.scena:hover .tablet{transform:rotateY(-6deg) rotateX(3deg) rotateZ(0)}
+.schermo{background:#F6F6F3;color:var(--ink);border-radius:18px;overflow:hidden;aspect-ratio:4/3.1;display:flex;flex-direction:column;font-size:13px}
+.s-barra{display:flex;align-items:center;gap:9px;padding:11px 14px;background:#fff;border-bottom:1px solid #E4E3DE}
+.s-logo{width:26px;height:26px;border-radius:8px;background:var(--c);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:14px;transition:background .5s}
+.s-barra b{font-size:14px}
+.s-barra .s-ut{margin-left:auto;font-size:11.5px;color:#777;border:1px solid #E4E3DE;border-radius:99px;padding:3px 10px}
+.s-tabs{display:flex;gap:16px;padding:9px 14px 0;background:#fff;border-bottom:1px solid #E4E3DE;font-size:12px;color:#888;white-space:nowrap;overflow:hidden}
+.s-tabs i{font-style:normal;padding-bottom:8px}
+.s-tabs i.on{color:var(--ink);font-weight:700;box-shadow:inset 0 -2px 0 var(--c)}
+.s-corpo{padding:12px;display:grid;gap:8px;align-content:start;flex:1;overflow:hidden}
+.s-kp{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.s-kp div{background:#fff;border:1px solid #E4E3DE;border-radius:10px;padding:8px 10px}
+.s-kp b{display:block;font-family:var(--display);font-size:20px;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.s-kp span{font-size:11px;color:#888}
+.s-riga{background:#fff;border:1px solid #E4E3DE;border-radius:10px;padding:9px 11px;display:flex;align-items:center;gap:10px;opacity:0;transform:translateY(8px);transition:opacity .45s,transform .45s var(--ease)}
+.s-riga.vista{opacity:1;transform:none}
+.s-riga .o{font-family:var(--mono);font-weight:700;font-size:12px;min-width:46px}
+.s-riga .m{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chip{font-size:11px;font-weight:700;border-radius:99px;padding:3px 9px;white-space:nowrap;transition:background .35s,color .35s}
+.chip.att{background:#F4E6CF;color:#9A5D0C}.chip.ok{background:#DAEEE3;color:#1F7A4E}.chip.info{background:#DFE8F4;color:#2D5B8A}.chip.no{background:#F6DCD6;color:#B3402F}
+.sel-prod{display:flex;gap:8px;margin-top:22px;position:relative;z-index:2;flex-wrap:wrap}
+.sel-prod button{border:1px solid var(--linea-s);background:rgba(255,255,255,.03);color:#C9CBD0;border-radius:99px;padding:8px 16px;font-weight:700;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .25s}
+.sel-prod button i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.sel-prod button[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:var(--lava)}
+.sel-prod button[aria-pressed="true"] i{background:var(--lava)}
+
+/* nastro dei mestieri */
+.nastro{margin-top:90px;border-top:1px solid var(--linea-s);overflow:hidden;padding-block:22px;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.nastro .scorre{display:flex;gap:44px;width:max-content;animation:scorri 38s linear infinite;font-family:var(--display);font-weight:700;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.01em;color:#6B6E76}
+.nastro .scorre span{display:flex;align-items:center;gap:44px;white-space:nowrap}
+.nastro .scorre span::after{content:"";width:10px;height:10px;border-radius:3px;background:currentColor;opacity:.5}
+.nastro .scorre span:nth-child(4n+1){color:#DCDDE0}
+@keyframes scorri{to{transform:translateX(-50%)}}
+
+/* ---------- sezioni ---------- */
+section{padding-block:clamp(80px,10vw,140px)}
+.testa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,72px)}
+.testa h2{font-size:clamp(38px,5.6vw,76px);font-weight:800}
+.testa p{font-size:clamp(17px,1.5vw,20px);color:var(--muto);max-width:48ch}
+.testa .eyebrow{color:var(--muto);margin-bottom:18px;display:block}
+
+/* prodotti */
+.prodotto{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,5vw,72px);align-items:center;padding-block:clamp(40px,6vw,72px);border-top:1px solid var(--linea)}
+.prodotto:nth-of-type(even) .p-testo{order:2}
+.p-testo{min-width:0}
+.p-testo .nome{display:flex;align-items:center;gap:14px}
+.p-ic{width:56px;height:56px;border-radius:16px;background:var(--c);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:28px;flex:none}
+.p-testo h3{font-size:clamp(44px,5.4vw,72px);font-weight:800;color:var(--cd)}
+.p-testo .per{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muto);margin-top:18px}
+.p-testo .frase{font-size:clamp(20px,2vw,26px);font-weight:600;line-height:1.3;margin-top:12px;max-width:30ch;letter-spacing:-.01em}
+.p-testo ul{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
+.p-testo li{display:grid;grid-template-columns:22px 1fr;gap:10px;color:#33353A}
+.p-testo li::before{content:"";width:12px;height:12px;border-radius:4px;background:var(--c);margin-top:.42em}
+.p-azioni{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.p-azioni .btn{padding:13px 20px;font-size:15px}
+.p-azioni .pieno{background:var(--cd);color:#fff}
+.p-azioni .btn-linea{color:var(--cd)}
+.t{--c:var(--tavolo);--cd:var(--tavolo-d)}.v{--c:var(--vassoio);--cd:var(--vassoio-d)}.p{--c:var(--poltrona);--cd:var(--poltrona-d)}.b{--c:var(--bancone);--cd:var(--bancone-d)}
+
+/* demo nella pagina */
+.prova{min-width:0;background:var(--carta);border:1px solid var(--linea);border-radius:26px;padding:clamp(16px,2.4vw,26px);box-shadow:0 30px 60px -40px rgba(20,21,24,.35);position:relative}
+.prova::before{content:"Prova: tocca";position:absolute;top:-12px;left:22px;background:var(--cd);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:99px}
+.prova h4{font-size:19px;font-weight:700;letter-spacing:-.01em;display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.prova h4 small{font-family:var(--body);font-size:13px;font-weight:600;color:var(--muto);letter-spacing:0}
+.mappa{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
+.tav{aspect-ratio:1;border-radius:14px;border:1.5px dashed #C9C7BF;background:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;cursor:pointer;transition:all .25s var(--ease);font-weight:700}
+.tav b{font-family:var(--display);font-size:22px}
+.tav small{font-size:11.5px;color:var(--muto);font-weight:600}
+.tav.occ{border:1.5px solid var(--c);background:color-mix(in srgb,var(--c) 14%,#fff)}
+.tav.conto{background:var(--c);color:#fff;border-color:var(--c)}.tav.conto small{color:#fff}
+.tav:hover{transform:translateY(-2px)}
+.barra-tot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:14px;border-top:1px solid var(--linea);font-weight:600;color:var(--muto);gap:10px;flex-wrap:wrap}
+.barra-tot b{font-family:var(--display);font-size:26px;color:var(--ink);font-variant-numeric:tabular-nums}
+.lista-prod{margin-top:14px;display:grid;gap:8px}
+.voce{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--linea);border-radius:12px;padding:12px 14px;cursor:pointer;transition:all .25s;user-select:none}
+.voce .box{width:24px;height:24px;border-radius:7px;border:2px solid var(--c);display:grid;place-items:center;flex:none;transition:background .2s}
+.voce .box svg{width:14px;height:14px;opacity:0;transition:opacity .2s}
+.voce.fatto .box{background:var(--c)}.voce.fatto .box svg{opacity:1}
+.voce .n{flex:1;font-weight:600}
+.voce .q{font-family:var(--display);font-weight:700;font-size:19px;font-variant-numeric:tabular-nums}
+.voce.fatto .n,.voce.fatto .q{text-decoration:line-through;color:var(--muto)}
+.scritta{display:inline-block;margin-top:12px;background:color-mix(in srgb,var(--c) 16%,#fff);color:var(--cd);border-radius:8px;padding:6px 12px;font-weight:700}
+.agenda{display:grid;grid-template-columns:42px 1fr 1fr;gap:0;margin-top:16px;border:1px solid var(--linea);border-radius:14px;overflow:hidden;background:#fff;font-size:13px}
+.agenda .h{padding:9px 10px;font-weight:700;border-bottom:1px solid var(--linea);display:flex;align-items:center;gap:6px}
+.agenda .h i{width:8px;height:8px;border-radius:50%}
+.agenda .ore{border-right:1px solid var(--linea);color:var(--muto);font-family:var(--mono);font-size:11px}
+.agenda .ore div,.agenda .col div.slot{height:44px;border-bottom:1px solid #EEECE6;padding:4px 6px}
+.agenda .col{border-right:1px solid var(--linea);position:relative}
+.agenda .col:last-child{border-right:0}
+.app{position:absolute;left:4px;right:4px;border-radius:8px;padding:5px 8px;font-size:12px;line-height:1.25;background:color-mix(in srgb,var(--k) 16%,#fff);border-left:3px solid var(--k);overflow:hidden}
+.app b{display:block;font-size:12.5px}
+.wa-msg{margin-top:12px;background:#DCF7C5;color:#1D2A14;border-radius:14px 14px 14px 4px;padding:11px 14px;font-size:14.5px;max-width:42ch;position:relative}
+.wa-msg small{display:block;text-align:right;font-size:11px;color:#5d7a4c;margin-top:4px}
+.wa-risp{margin-top:8px;margin-left:auto;background:#fff;border:1px solid var(--linea);border-radius:14px 14px 4px 14px;padding:9px 14px;font-weight:700;width:max-content;max-width:80%;opacity:0;transform:translateY(6px);transition:all .4s var(--ease)}
+.wa-risp.vista{opacity:1;transform:none}
+.porta{margin-top:16px;display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+.codice{display:flex;gap:8px}
+.codice input{flex:1;min-width:0;font-family:var(--mono);font-size:24px;letter-spacing:.18em;text-transform:uppercase;padding:12px 14px;border-radius:12px;border:1.5px solid var(--linea);background:#fff;color:var(--ink)}
+.codice input:focus{outline:none;border-color:var(--c)}
+.codice button{border:0;border-radius:12px;background:var(--cd);color:#fff;font-weight:700;padding:0 18px;cursor:pointer}
+.esempi{display:flex;gap:6px;flex-wrap:wrap;font-size:13px;color:var(--muto);align-items:center}
+.esempi button{font-family:var(--mono);font-size:12.5px;border:1px solid var(--linea);background:#fff;border-radius:8px;padding:4px 8px;cursor:pointer}
+.esito{border-radius:16px;padding:16px 18px;transition:background .3s}
+.esito strong{font-family:var(--display);font-size:30px;display:block;letter-spacing:-.01em;line-height:1}
+.esito p{margin-top:6px;font-size:15px}
+.esito.attesa{background:#EDECE7;color:var(--muto)}.esito.ok{background:#DAEEE3;color:#14532F}.esito.ko{background:#F6DCD6;color:#8A2A1C}
+.contatore{display:flex;align-items:center;gap:14px}
+.contatore b{font-family:var(--display);font-size:34px;font-variant-numeric:tabular-nums;line-height:1}
+.contatore .bar{flex:1;height:8px;border-radius:9px;background:#E3E1DA;overflow:hidden}
+.contatore .bar i{display:block;height:100%;background:var(--c);transition:width .5s var(--ease)}
+.mini-btn{border:1px solid var(--linea);background:#fff;border-radius:10px;padding:8px 12px;font-weight:700;cursor:pointer;font-size:14px}
+.mini-btn.pieno{background:var(--cd);border-color:var(--cd);color:#fff}
+
+/* senza internet */
+.rete{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(30px,5vw,80px);align-items:center}
+.rete h2{font-size:clamp(40px,5.6vw,78px);font-weight:800}
+.rete h2 s{text-decoration-thickness:6px;text-decoration-color:var(--vassoio);color:#7E818A}
+.rete p.lead{font-size:clamp(17px,1.5vw,20px);color:#C9CBD0;margin-top:22px;max-width:46ch}
+.schema{width:100%;height:auto;display:block}
+.schema .filo{stroke-dasharray:6 8;animation:flusso 1.4s linear infinite}
+@keyframes flusso{to{stroke-dashoffset:-28}}
+.punti{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linea-s);border:1px solid var(--linea-s);border-radius:18px;overflow:hidden;margin-top:36px}
+.punti div{background:var(--lava);padding:18px 20px}
+.punti b{font-family:var(--display);font-size:20px;display:block;letter-spacing:-.01em}
+.punti span{font-size:14.5px;color:var(--muto-s)}
+
+/* prima e dopo */
+.confronto{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.carta,.digitale{border-radius:24px;padding:clamp(22px,3vw,36px);min-height:100%}
+.carta{background:#E4E1D8;background-image:repeating-linear-gradient(#E4E1D8 0 31px,#CFCBC0 31px 32px);font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive;color:#3B3A36}
+.carta h3,.digitale h3{font-family:var(--display);font-size:28px;margin-bottom:18px}
+.carta ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:17px;line-height:24px}
+.carta li s{color:#9B3B2A}
+.digitale{background:var(--lava);color:#F2F1EE}
+.digitale ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.digitale li{display:flex;gap:12px;align-items:flex-start}
+.digitale li i{flex:none;width:22px;height:22px;border-radius:7px;background:var(--c);display:grid;place-items:center;margin-top:2px}
+.digitale li i svg{width:13px;height:13px}
+
+/* passi */
+.passi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:p}
+.passo{background:var(--carta);border:1px solid var(--linea);border-radius:22px;padding:26px;position:relative;overflow:hidden}
+.passo .num{font-family:var(--display);font-weight:800;font-size:76px;line-height:.8;color:transparent;-webkit-text-stroke:1.5px #B9B6AC}
+.passo h3{font-size:22px;margin:18px 0 8px;letter-spacing:-.01em}
+.passo p{color:var(--muto);font-size:15.5px}
+.passo .quando{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muto);margin-top:16px}
+
+/* domande */
+.faq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,5vw,80px)}
+.faq h2{font-size:clamp(38px,5vw,66px);font-weight:800}
+details{border-bottom:1px solid var(--linea)}
+details summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:22px;font-weight:700;font-size:clamp(18px,1.6vw,21px);letter-spacing:-.01em}
+details summary::-webkit-details-marker{display:none}
+details summary .seg{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--linea);display:grid;place-items:center;flex:none;transition:transform .3s var(--ease),background .3s}
+details summary .seg::before{content:"+";font-weight:500;font-size:20px;line-height:1}
+details[open] summary .seg{transform:rotate(45deg);background:var(--ink);color:var(--cenere);border-color:var(--ink)}
+details p{color:var(--muto);padding-bottom:22px;max-width:62ch;font-size:16.5px}
+
+/* chiusura */
+.finale{text-align:left}
+.finale h2{font-size:clamp(48px,8.4vw,128px);font-weight:800;letter-spacing:-.04em}
+.finale h2 em{font-style:normal;background:linear-gradient(90deg,var(--tavolo),var(--vassoio),var(--poltrona),var(--bancone));-webkit-background-clip:text;background-clip:text;color:transparent}
+.finale .riga{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;margin-top:56px;align-items:start}
+.finale .sotto{font-size:clamp(18px,1.6vw,21px);color:#C9CBD0;max-width:44ch}
+.recapiti{display:grid;gap:10px}
+.recapito{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--linea-s);border-radius:16px;padding:14px 18px;background:rgba(255,255,255,.02);flex-wrap:wrap}
+.recapito span{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muto-s)}
+.recapito b{font-size:19px;font-variant-numeric:tabular-nums;user-select:all}
+.recapito .az{border:1px solid var(--linea-s);background:transparent;border-radius:10px;padding:8px 12px;font-weight:700;font-size:13.5px;cursor:pointer;text-decoration:none;color:#F2F1EE}
+footer{border-top:1px solid var(--linea-s);margin-top:90px;padding-block:28px calc(36px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muto-s);font-size:14px}
+.wa-fisso{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.45);transition:transform .25s var(--ease),opacity .3s;opacity:0;pointer-events:none}
+.wa-fisso.su{opacity:1;pointer-events:auto}
+.wa-fisso:hover{transform:scale(1.06)}
+.wa-fisso svg{width:28px;height:28px}
+
+/* comparsa allo scorrimento: il contenuto è visibile anche senza script */
+.js .entra{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .entra.dentro{opacity:1;transform:none}
+
+@media (max-width:1000px){
+  .hero-grid,.testa,.prodotto,.rete,.faq,.finale .riga{grid-template-columns:minmax(0,1fr)}
+  .prodotto:nth-of-type(even) .p-testo{order:0}
+  .passi{grid-template-columns:1fr 1fr}
+  .nav ul{display:none}
+  .tablet{transform:rotateY(-6deg) rotateX(4deg)}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .confronto,.passi,.punti{grid-template-columns:minmax(0,1fr)}
+  .nav .btn span{display:none}.nav .btn{padding:10px 12px}
+  .mappa{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.tav b{font-size:18px}
+  .hero{padding-top:calc(104px + env(safe-area-inset-top,0px))}
+  .schermo{aspect-ratio:auto;min-height:330px}
+  .codice input{font-size:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .js .entra{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="marchio" href="#inizio" aria-label="Famiglia Tavolo, torna all'inizio"><span class="quad" aria-hidden="true"><i style="background:var(--tavolo)"></i><i style="background:var(--vassoio)"></i><i style="background:var(--poltrona)"></i><i style="background:var(--bancone)"></i></span>Famiglia Tavolo</a>
+    <ul><li><a href="#prodotti">Prodotti</a></li><li><a href="#rete">Senza internet</a></li><li><a href="#metodo">Come funziona</a></li><li><a href="#domande">Domande</a></li></ul>
+    <a class="btn btn-wa" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20informazioni%20sui%20gestionali%20della%20Famiglia%20Tavolo." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3Z"/></svg><span>Scrivici</span></a>
+  </div>
+</header>
+
+<main id="inizio">
+<div class="lava hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow"><span class="pt" aria-hidden="true"></span>Gestionali fatti a Catania</p>
+        <h1>Il gestionale che parla la lingua <span class="giro" aria-live="polite"><span id="giro">della sala.</span></span></h1>
+        <p class="sotto">Quattro programmi per quattro mestieri: ristoranti, pasticcerie, saloni e locali notturni. Si installano sul computer del tuo locale e funzionano sul tuo Wi-Fi, anche quando internet salta.</p>
+        <div class="azioni">
+          <a class="btn btn-chiaro" href="#prodotti">Scegli il tuo programma</a>
+          <a class="btn btn-wa" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20una%20demo%20dal%20vivo%20nel%20mio%20locale." target="_blank" rel="noopener">Demo nel tuo locale</a>
+        </div>
+        <div class="prove"><div><b>30 giorni</b>di prova gratuita</div><div><b>0 internet</b>serve per lavorare</div><div><b>1 PIN</b>a persona, niente password</div></div>
+      </div>
+      <div class="scena" id="scena">
+        <div class="alone" aria-hidden="true"></div>
+        <div class="tablet"><div class="schermo" id="schermo" aria-label="Anteprima del programma"></div></div>
+        <div class="sel-prod" role="group" aria-label="Guarda un programma">
+          <button class="t" data-p="t" aria-pressed="true"><i></i>Tavolo</button><button class="v" data-p="v" aria-pressed="false"><i></i>Vassoio</button><button class="p" data-p="p" aria-pressed="false"><i></i>Poltrona</button><button class="b" data-p="b" aria-pressed="false"><i></i>Bancone</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nastro" aria-hidden="true"><div class="scorre" id="nastro"></div></div>
+</div>
+
+<section id="prodotti">
+  <div class="wrap">
+    <div class="testa entra"><div><span class="eyebrow">I prodotti</span><h2>Uno per ogni mestiere. Stessa base solida.</h2></div><p>Ogni programma ha le schermate di chi lavora al banco, in sala, in laboratorio o alla porta. Qui sotto puoi già provarli: tocca i tavoli, spunta la produzione, scansiona un codice.</p></div>
+
+    <article class="prodotto t entra" id="tavolo">
+      <div class="p-testo">
+        <div class="nome"><div class="p-ic">T</div><h3>Tavolo</h3></div>
+        <p class="per">Ristoranti · Trattorie · Pizzerie · Bar</p>
+        <p class="frase">Sala, cucina e cassa che si parlano. Dalla comanda al conto senza un foglietto.</p>
+        <ul><li>Mappa dei tavoli, comande in cucina, conto diviso e sconti</li><li>Ordine dal tavolo col QR, menu in cinque lingue e allergeni</li><li>Prenotazioni, asporto e consegne di Glovo, Deliveroo, Just Eat</li><li>HACCP con temperature, etichette e scadenze, magazzino e food cost</li><li>Turni, fidelity, eventi con preventivi e fatture elettroniche</li></ul>
+        <div class="p-azioni"><a class="btn pieno" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20vedere%20Tavolo%20dal%20vivo." target="_blank" rel="noopener">Vedilo dal vivo</a></div>
+      </div>
+      <div class="prova" id="provaT"></div>
+    </article>
+
+    <article class="prodotto v entra" id="vassoio">
+      <div class="p-testo">
+        <div class="nome"><div class="p-ic">V</div><h3>Vassoio</h3></div>
+        <p class="per">Pasticcerie · Panifici · Rosticcerie</p>
+        <p class="frase">Gli ordini delle feste senza il quaderno. Il laboratorio sa cosa fare, il banco sa cosa incassare.</p>
+        <ul><li>Ordini di torte e vassoi con acconto, saldo al ritiro e ricevuta</li><li>Calendario dei ritiri con Sant'Agata, Morti, Natale e Pasqua segnati</li><li>Foglio di produzione: tutti gli ordini del giorno sommati per prodotto</li><li>Scritte sulle torte e richieste particolari per il laboratorio</li><li>Conferma e "è pronto" su WhatsApp con il messaggio già scritto</li></ul>
+        <div class="p-azioni"><a class="btn pieno" href="demo/vassoio.html">Prova la demo completa</a><a class="btn btn-linea" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20informazioni%20su%20Vassoio." target="_blank" rel="noopener">Informazioni</a></div>
+      </div>
+      <div class="prova" id="provaV"></div>
+    </article>
+
+    <article class="prodotto p entra" id="poltrona">
+      <div class="p-testo">
+        <div class="nome"><div class="p-ic">P</div><h3>Poltrona</h3></div>
+        <p class="per">Parrucchieri · Barbieri · Estetiste · Nail bar</p>
+        <p class="frase">L'agenda che ricorda gli appuntamenti al posto tuo. Meno poltrone vuote, più clienti che tornano.</p>
+        <ul><li>Agenda a colonne per collaboratore che avvisa se l'orario è occupato</li><li>Promemoria WhatsApp del giorno dopo, con conferma 1 o 2</li><li>Tessera a timbri e scheda tecnica con la formula del colore</li><li>Magazzino di tinte e prodotti con ordine al fornitore</li><li>Cassa per collaboratore e lista dei clienti da richiamare</li></ul>
+        <div class="p-azioni"><a class="btn pieno" href="demo/poltrona.html">Prova la demo completa</a><a class="btn btn-linea" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20informazioni%20su%20Poltrona." target="_blank" rel="noopener">Informazioni</a></div>
+      </div>
+      <div class="prova" id="provaP"></div>
+    </article>
+
+    <article class="prodotto b entra" id="bancone">
+      <div class="p-testo">
+        <div class="nome"><div class="p-ic">B</div><h3>Bancone</h3></div>
+        <p class="per">Discoteche · Pub · Lidi · Locali con liste</p>
+        <p class="frase">Liste, porta e bar nello stesso posto. Sai chi è entrato, con chi e quanto ha speso.</p>
+        <ul><li>Liste dei PR con un codice e un QR per ogni ospite</li><li>Controllo alla porta col prezzo giusto all'ora giusta</li><li>Contatore delle persone dentro rispetto alla capienza</li><li>Tavoli con minimo spesa e bottiglie aggiunte con un tocco</li><li>Cassa del bar e provvigioni dei PR calcolate da sole</li></ul>
+        <div class="p-azioni"><a class="btn pieno" href="demo/bancone.html">Prova la demo completa</a><a class="btn btn-linea" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20informazioni%20su%20Bancone." target="_blank" rel="noopener">Informazioni</a></div>
+      </div>
+      <div class="prova" id="provaB"></div>
+    </article>
+  </div>
+</section>
+
+<section class="lava" id="rete">
+  <div class="wrap">
+    <div class="rete">
+      <div class="entra">
+        <span class="eyebrow" style="color:var(--muto-s)">Come è fatto</span>
+        <h2 style="margin-top:18px">Internet salta. <s>Il servizio si ferma.</s> Tu continui.</h2>
+        <p class="lead">Il programma vive su un computer del tuo locale: la cassa o un mini PC. Tablet e telefoni si collegano al tuo Wi-Fi. Niente abbonamenti a server lontani, niente schermate bloccate il sabato sera.</p>
+        <div class="punti">
+          <div><b>I dati restano tuoi</b><span>Sul computer del locale, con una copia automatica ogni giorno.</span></div>
+          <div><b>Tutti in tempo reale</b><span>La comanda presa in sala compare subito in cucina.</span></div>
+          <div><b>Ognuno il suo ruolo</b><span>Il PR non vede la cassa, il laboratorio non vede gli incassi.</span></div>
+          <div><b>Come un'app</b><span>Si apre dal browser e si aggiunge alla schermata Home.</span></div>
+        </div>
+      </div>
+      <div class="entra" aria-hidden="true">
+        <svg class="schema" viewBox="0 0 560 480" role="img">
+          <defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F2B33D" stop-opacity=".35"/><stop offset="1" stop-color="#F2B33D" stop-opacity="0"/></radialGradient></defs>
+          <g fill="none" stroke-width="2" stroke-linecap="round">
+            <path class="filo" d="M280 250 L110 110" stroke="#3FA37A"/><path class="filo" d="M280 250 L450 110" stroke="#E07A52"/><path class="filo" d="M280 250 L100 380" stroke="#C975B2"/><path class="filo" d="M280 250 L460 380" stroke="#F2B33D"/>
+          </g>
+          <circle cx="280" cy="250" r="120" fill="url(#g)"/>
+          <rect x="216" y="200" width="128" height="86" rx="10" fill="#2A2D33" stroke="#4A4E57"/><rect x="226" y="210" width="108" height="62" rx="5" fill="#141518"/>
+          <rect x="262" y="286" width="36" height="12" fill="#4A4E57"/><rect x="244" y="298" width="72" height="8" rx="4" fill="#4A4E57"/>
+          <text x="280" y="246" text-anchor="middle" fill="#F2F1EE" font-family="Syne,sans-serif" font-weight="800" font-size="15">Il tuo locale</text>
+          <text x="280" y="327" text-anchor="middle" fill="#A3A6AD" font-family="JetBrains Mono,monospace" font-size="11">192.168.1.20</text>
+          <g font-family="Hanken Grotesk,sans-serif" font-weight="700" font-size="13" fill="#F2F1EE" text-anchor="middle">
+            <rect x="60" y="62" width="100" height="74" rx="12" fill="#1C1E22" stroke="#3FA37A"/><text x="110" y="104">Sala</text>
+            <rect x="404" y="62" width="92" height="74" rx="12" fill="#1C1E22" stroke="#E07A52"/><text x="450" y="104">Cucina</text>
+            <rect x="60" y="346" width="80" height="70" rx="12" fill="#1C1E22" stroke="#C975B2"/><text x="100" y="386">Banco</text>
+            <rect x="420" y="346" width="80" height="70" rx="12" fill="#1C1E22" stroke="#F2B33D"/><text x="460" y="386">Porta</text>
+          </g>
+          <g transform="translate(470 220)"><path d="M10 26a14 14 0 0 1 2-27 18 18 0 0 1 34 4 12 12 0 0 1 4 23Z" fill="#2A2D33" stroke="#4A4E57"/><path d="M14 4 L44 30 M44 4 L14 30" stroke="#E07A52" stroke-width="3" stroke-linecap="round"/><text x="29" y="50" text-anchor="middle" fill="#7E818A" font-family="JetBrains Mono,monospace" font-size="10">internet</text></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prima-dopo">
+  <div class="wrap">
+    <div class="testa entra"><div><span class="eyebrow">Prima e dopo</span><h2>Dal quaderno al tablet in una settimana.</h2></div><p>Le stesse cose che fai oggi a mano, solo più veloci e senza errori di calcolo.</p></div>
+    <div class="confronto entra">
+      <div class="carta"><h3>Oggi, su carta</h3><ul>
+        <li>Sig.ra Russo – torta 1,5 kg – <s>sabato</s> domenica?</li>
+        <li>Acconto 15 € … o 20?</li>
+        <li>Tav 7 ha chiesto il conto (10 min fa)</li>
+        <li>Chiamare Laura per domani ore 9</li>
+        <li>Lista Ciccio: 14 nomi, entrati boh</li>
+        <li>Tinta 6.4 finita!! ordinare</li>
+      </ul></div>
+      <div class="digitale t"><h3>Con la Famiglia Tavolo</h3><ul>
+        <li><i><svg viewBox="0 0 16 16" fill="none" stroke="#141518" stroke-width="2.5"><path d="M3 8.5 6.5 12 13 4"/></svg></i><span>Ordine n. 128 per domenica alle 11, con acconto registrato e ricevuta stampata</span></li>
+        <li><i style="background:var(--vassoio)"><svg viewBox="0 0 16 16" fill="none" stroke="#141518" stroke-width="2.5"><path d="M3 8.5 6.5 12 13 4"/></svg></i><span>Il conto del tavolo 7 compare in cassa appena il cameriere lo chiede</span></li>
+        <li><i style="background:var(--poltrona)"><svg viewBox="0 0 16 16" fill="none" stroke="#141518" stroke-width="2.5"><path d="M3 8.5 6.5 12 13 4"/></svg></i><span>Il promemoria a Laura parte su WhatsApp, lei risponde 1 e l'agenda si aggiorna</span></li>
+        <li><i style="background:var(--bancone)"><svg viewBox="0 0 16 16" fill="none" stroke="#141518" stroke-width="2.5"><path d="M3 8.5 6.5 12 13 4"/></svg></i><span>Lista di Ciccio: 14 in lista, 5 entrati, provvigione 10 € già calcolata</span></li>
+        <li><i><svg viewBox="0 0 16 16" fill="none" stroke="#141518" stroke-width="2.5"><path d="M3 8.5 6.5 12 13 4"/></svg></i><span>La tinta sotto soglia finisce da sola nell'ordine al fornitore</span></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="metodo" style="padding-top:0">
+  <div class="wrap">
+    <div class="testa entra"><div><span class="eyebrow">Come funziona</span><h2>Ci pensiamo noi, di persona.</h2></div><p>Siamo a Catania: veniamo nel locale, installiamo, formiamo lo staff e restiamo raggiungibili su WhatsApp.</p></div>
+    <div class="passi">
+      <div class="passo entra"><div class="num">1</div><h3>Sopralluogo</h3><p>Guardiamo come lavori oggi: quante persone, quanti tablet, cosa scrivi ancora su carta.</p><p class="quando">Gratis · 30 minuti</p></div>
+      <div class="passo entra"><div class="num">2</div><h3>Installazione</h3><p>Sul computer della cassa o su un mini PC. Prepariamo menu, listino o servizi e colleghiamo i tablet.</p><p class="quando">Mezza giornata</p></div>
+      <div class="passo entra"><div class="num">3</div><h3>Formazione</h3><p>Una prova con tutto lo staff prima dell'apertura. Ognuno impara solo quello che gli serve.</p><p class="quando">Prima del servizio</p></div>
+      <div class="passo entra"><div class="num">4</div><h3>Un mese di prova</h3><p>Lavori davvero per 30 giorni. Se ti trovi bene attivi la licenza, e l'assistenza continua.</p><p class="quando">30 giorni</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="domande" style="padding-top:0">
+  <div class="wrap faq">
+    <div class="entra"><span class="eyebrow" style="color:var(--muto)">Domande</span><h2 style="margin-top:18px">Quello che ci chiedono prima di iniziare.</h2></div>
+    <div class="entra">
+      <details open><summary>Serve internet per lavorare?<span class="seg" aria-hidden="true"></span></summary><p>No. Il programma gira sul computer del locale e i tablet si collegano al Wi-Fi interno. Internet serve solo per aprire i messaggi WhatsApp dai telefoni.</p></details>
+      <details><summary>Fa gli scontrini fiscali?<span class="seg" aria-hidden="true"></span></summary><p>No, non sostituisce il registratore telematico. Registra conti, acconti e incassi e l'importo si batte sul registratore come sempre. Tavolo può collegarsi ad alcuni registratori Epson di rete.</p></details>
+      <details><summary>Che computer serve?<span class="seg" aria-hidden="true"></span></summary><p>Uno qualsiasi che resti acceso durante l'orario di lavoro: Windows, Mac o Linux. Va bene il PC della cassa o un mini PC. I tablet e i telefoni li usi come sono, dal browser.</p></details>
+      <details><summary>Ho un bar con le serate: posso usarne due?<span class="seg" aria-hidden="true"></span></summary><p>Sì. Ogni programma ha il suo spazio e possono restare accesi insieme sullo stesso computer: per esempio Tavolo per il bar di giorno e Bancone per la notte.</p></details>
+      <details><summary>Quanto costa?<span class="seg" aria-hidden="true"></span></summary><p>Dipende da quanti tablet ti servono e da cosa vuoi usare. Ti facciamo un preventivo dopo il sopralluogo, e i primi 30 giorni sono di prova.</p></details>
+      <details><summary>Se il computer si rompe perdo tutto?<span class="seg" aria-hidden="true"></span></summary><p>No. Ogni giorno si salva una copia automatica, e può andare anche su chiavetta, OneDrive o Google Drive. Su un computer nuovo si riparte dall'ultima copia.</p></details>
+      <details><summary>E se lo staff cambia?<span class="seg" aria-hidden="true"></span></summary><p>Il titolare aggiunge o disattiva le persone in un minuto e sceglie il ruolo di ognuno. Chi va via non può più entrare.</p></details>
+    </div>
+  </div>
+</section>
+
+<div class="lava" id="contatti">
+  <section style="padding-bottom:0">
+    <div class="wrap finale">
+      <h2 class="entra">Facciamo un giro <em>nel tuo locale?</em></h2>
+      <div class="riga">
+        <div class="entra"><p class="sotto">Scrivici il nome della tua attività e cosa ti serve. Passiamo a mostrarti il programma dal vivo, gratis e senza impegno.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><a class="btn btn-wa" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20una%20demo%20dal%20vivo%20nel%20mio%20locale." target="_blank" rel="noopener">Scrivici su WhatsApp</a><a class="btn btn-linea" href="#prodotti" style="color:#F2F1EE">Rivedi i programmi</a></div></div>
+        <div class="recapiti entra">
+          <div class="recapito"><div><span>Telefono e WhatsApp</span><b>+39 349 699 1941</b></div><button class="az" data-copia="+39 349 699 1941">Copia</button></div>
+          <div class="recapito"><div><span>Email</span><b>teampvtads@gmail.com</b></div><button class="az" data-copia="teampvtads@gmail.com">Copia</button></div>
+          <div class="recapito"><div><span>Instagram</span><b>@hellotavolo</b></div><a class="az" href="https://www.instagram.com/hellotavolo/" target="_blank" rel="noopener">Apri</a></div>
+          <div class="recapito"><div><span>TikTok</span><b>@hellotavolo_it</b></div><a class="az" href="https://www.tiktok.com/@hellotavolo_it" target="_blank" rel="noopener">Apri</a></div>
+        </div>
+      </div>
+      <footer><span>© <span id="anno">2026</span> Famiglia Tavolo · Tavolo, Vassoio, Poltrona, Bancone · Catania</span><span>I programmi non sostituiscono il registratore telematico.</span></footer>
+    </div>
+  </section>
+</div>
+</main>
+
+<a class="wa-fisso" id="waFisso" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20informazioni%20sui%20gestionali%20della%20Famiglia%20Tavolo." target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3Z"/></svg></a>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fermo=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const eur=n=>n.toLocaleString("it-IT",{style:"currency",currency:"EUR"});
+const SPUNTA='<svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.6"><path d="M3 8.5 6.5 12 13 4"/></svg>';
+document.getElementById("anno").textContent=new Date().getFullYear();
+
+/* navigazione e pulsante WhatsApp */
+const nav=$("#nav"),wa=$("#waFisso");
+const suScroll=()=>{const y=scrollY;nav.classList.toggle("su",y>20);wa.classList.toggle("su",y>innerHeight*.9)};
+addEventListener("scroll",suScroll,{passive:true});suScroll();
+
+/* comparsa */
+if("IntersectionObserver" in window&&!fermo){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("dentro");io.unobserve(e.target)}}),{rootMargin:"0px 0px -8% 0px"});document.querySelectorAll(".entra").forEach(el=>io.observe(el))}
+else document.querySelectorAll(".entra").forEach(el=>el.classList.add("dentro"));
+
+/* nastro */
+const mestieri=["Trattorie","Pizzerie","Bar","Pasticcerie","Panifici","Rosticcerie","Parrucchieri","Barbieri","Estetiste","Discoteche","Pub","Lidi"];
+$("#nastro").innerHTML=[...mestieri,...mestieri].map(m=>`<span>${m}</span>`).join("");
+
+/* apertura: frase che cambia e tablet con la giornata di ogni programma */
+const COL={t:"#3FA37A",v:"#E07A52",p:"#C975B2",b:"#F2B33D"};
+const SCENE={
+ t:{frase:"della sala.",att:"Trattoria da Turi",ut:"Giusy · Cameriere",tabs:["Sala","Cucina","Cassa","Prenotazioni","HACCP"],kp:[["14/22","Tavoli"],["38","Coperti"],["1.240 €","Incasso"]],
+    righe:[["T4","2 carbonara · 1 caponata","In cucina","info","Servire","ok"],["T7","Conto richiesto · 86,50 €","Conto","att","Pagato","ok"],["T12","Allergia: frutta a guscio","Avviso","no","Avvisata","ok"],["Glovo","Asporto · ritiro 20:45","Nuovo","att","Pronto","ok"]]},
+ v:{frase:"del forno.",att:"Pasticceria Etnea",ut:"Turi · Laboratorio",tabs:["Ordini e ritiri","Produzione","Cassa","Catalogo"],kp:[["16","Ordini oggi"],["4,5 kg","Martorana"],["320 €","Da incassare"]],
+    righe:[["09:30","Greco · 24 cannoli","Da fare","att","Pronto","ok"],["11:00","Russo · millefoglie 1,5 kg","Da fare","att","In lavorazione","info"],["12:30","“Auguri Nonno Pippo” · 2 kg","Da fare","att","In lavorazione","info"],["17:30","Lo Giudice · mignon + arancini","Da fare","att","Pronto","ok"]]},
+ p:{frase:"del salone.",att:"Salone Giusy",ut:"Sara · Reception",tabs:["Agenda","Promemoria","Cassa","Clienti","Magazzino"],kp:[["13","Appuntamenti"],["5","Promemoria"],["392 €","Previsti"]],
+    righe:[["09:00","Laura · colore + piega","Promemoria","att","Confermato","ok"],["09:45","Kevin · taglio uomo","Promemoria","att","Confermato","ok"],["11:00","Chiara · pulizia viso","Prenotato","att","In salone","info"],["14:30","Francesca · meches","Promemoria","att","Vuole spostare","no"]]},
+ b:{frase:"della notte.",att:"Disco Lungomare",ut:"Rocco · Porta",tabs:["Porta","Liste PR","Tavoli","Bar"],kp:[["212/350","Dentro"],["38%","Presenza"],["2.110 €","Bar"]],
+    righe:[["K7Q3M","Marta R. · lista Ciccio","Verifico…","att","Valido","ok"],["U5A65","Gabriele P.","Verifico…","att","Già entrato","no"],["P1","Compleanno · 520 € / 400","Al tavolo","info","Minimo ok","ok"],["S3","Giorgia Events · 130 € / 150","Al tavolo","info","Mancano 20 €","att"]]}
+};
+const ORD=["t","v","p","b"];let cur="t",auto=true,giroT=null,scenaT=[];
+const schermo=$("#schermo"),giro=$("#giro"),scena=$("#scena");
+function mostra(k){cur=k;scenaT.forEach(clearTimeout);scenaT=[];const d=SCENE[k];
+  scena.style.setProperty("--c",COL[k]);schermo.style.setProperty("--c",COL[k]);
+  document.querySelectorAll(".sel-prod button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.p===k));
+  giro.style.transform="translateY(-110%)";giro.style.opacity="0";
+  scenaT.push(setTimeout(()=>{giro.textContent=d.frase;giro.style.fontSize="";const box=giro.parentElement.clientWidth;if(giro.scrollWidth>box)giro.style.fontSize=(box/giro.scrollWidth*100-1)+"%";giro.style.setProperty("--c",COL[k]);giro.style.transition="none";giro.style.transform="translateY(110%)";requestAnimationFrame(()=>{giro.style.transition="";giro.style.transform="none";giro.style.opacity="1"})},fermo?0:360));
+  schermo.innerHTML=`<div class="s-barra"><span class="s-logo">${{t:"T",v:"V",p:"P",b:"B"}[k]}</span><b>${esc(d.att)}</b><span class="s-ut">${esc(d.ut)}</span></div><div class="s-tabs">${d.tabs.map((t,i)=>`<i class="${i?"":"on"}">${esc(t)}</i>`).join("")}</div>
+  <div class="s-corpo"><div class="s-kp">${d.kp.map(([a,b])=>`<div><b>${esc(a)}</b><span>${esc(b)}</span></div>`).join("")}</div>${d.righe.map(r=>`<div class="s-riga"><span class="o">${esc(r[0])}</span><span class="m">${esc(r[1])}</span><span class="chip ${r[3]}">${esc(r[2])}</span></div>`).join("")}</div>`;
+  const righe=[...schermo.querySelectorAll(".s-riga")];
+  righe.forEach((el,i)=>scenaT.push(setTimeout(()=>el.classList.add("vista"),fermo?0:250+i*260)));
+  righe.forEach((el,i)=>scenaT.push(setTimeout(()=>{const r=d.righe[i],c=el.querySelector(".chip");c.className="chip "+r[5];c.textContent=r[4]},fermo?0:1500+i*520)));
+}
+document.querySelector(".sel-prod").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;auto=false;clearInterval(giroT);mostra(b.dataset.p)});
+mostra("t");
+if(document.fonts)document.fonts.ready.then(()=>{giro.style.fontSize="";const box=giro.parentElement.clientWidth;if(giro.scrollWidth>box)giro.style.fontSize=(box/giro.scrollWidth*100-1)+"%"});
+if(!fermo)giroT=setInterval(()=>{if(auto&&!document.hidden)mostra(ORD[(ORD.indexOf(cur)+1)%4])},5200);
+
+/* ---------- prove dentro la pagina ---------- */
+// Tavolo: tocca i tavoli
+const tavoli=[["1",0],["2",2],["3",0],["4",1],["5",0],["6",1],["7",2],["8",0]];
+const conti={2:62.5,4:38,6:91,7:86.5};
+function provaT(){const tot=tavoli.reduce((s,[n,st])=>s+(st?conti[n]||44:0),0),occ=tavoli.filter(t=>t[1]).length;
+  $("#provaT").innerHTML=`<h4>Sala interna <small>tocca un tavolo: libero › occupato › conto</small></h4><div class="mappa">${tavoli.map(([n,st],i)=>`<button class="tav ${st===1?"occ":st===2?"conto":""}" data-i="${i}" aria-label="Tavolo ${n}"><b>${n}</b><small>${st===1?eur(conti[n]||44):st===2?"conto":"libero"}</small></button>`).join("")}</div>
+  <div class="barra-tot"><span>${occ} tavoli aperti su ${tavoli.length}</span><b>${eur(tot)}</b></div>`}
+$("#provaT").addEventListener("click",e=>{const b=e.target.closest(".tav");if(!b)return;const t=tavoli[+b.dataset.i];t[1]=(t[1]+1)%3;if(t[1]===1&&!conti[t[0]])conti[t[0]]=Math.round(20+Math.random()*70)*1;provaT()});
+provaT();
+
+// Vassoio: spunta la produzione
+const prod=[["Frutta martorana","4,5 kg",false],["Pupi di zucchero","21 pz",false],["Ossa dei morti","3 kg",true],["Cannoli siciliani","36 pz",false]];
+function provaV(){const f=prod.filter(p=>p[2]).length;
+  $("#provaV").innerHTML=`<h4>Da produrre · Festa dei Morti <small>${f} di ${prod.length} pronti</small></h4><div class="lista-prod">${prod.map((p,i)=>`<div class="voce ${p[2]?"fatto":""}" role="checkbox" aria-checked="${p[2]}" tabindex="0" data-i="${i}"><span class="box">${SPUNTA}</span><span class="n">${p[0]}</span><span class="q">${p[1]}</span></div>`).join("")}</div>
+  <span class="scritta">✎ “Auguri Nonno Pippo” · ritiro ore 17:30</span><div class="barra-tot"><span>Ordini con acconto</span><b>23</b></div>`}
+const tocV=e=>{const v=e.target.closest(".voce");if(!v)return;const p=prod[+v.dataset.i];p[2]=!p[2];provaV();const n=$(`#provaV .voce[data-i="${v.dataset.i}"]`);if(n&&e.type==="keydown")n.focus()};
+$("#provaV").addEventListener("click",tocV);$("#provaV").addEventListener("keydown",e=>{if(e.key===" "||e.key==="Enter"){e.preventDefault();tocV(e)}});
+provaV();
+
+// Poltrona: manda il promemoria
+let pStato=0;
+function provaP(){const k1="var(--poltrona)",k2="#4E8FB8";
+  $("#provaP").innerHTML=`<h4>Martedì · agenda <small>${pStato===2?"Laura ha confermato":"tocca “Manda promemoria”"}</small></h4>
+  <div class="agenda"><div class="h"></div><div class="h"><i style="background:${k1}"></i>Giusy</div><div class="h"><i style="background:${k2}"></i>Marco</div>
+  <div class="ore">${["09","10","11"].map(h=>`<div>${h}:00</div>`).join("")}</div>
+  <div class="col">${[0,1,2].map(()=>`<div class="slot"></div>`).join("")}<div class="app" style="--k:${k1};top:4px;height:80px"><b>${pStato===2?"✓ ":""}Laura Caruso</b>Colore + piega</div><div class="app" style="--k:${k1};top:92px;height:38px"><b>Alessia P.</b>Taglio</div></div>
+  <div class="col">${[0,1,2].map(()=>`<div class="slot"></div>`).join("")}<div class="app" style="--k:${k2};top:4px;height:56px"><b>✓ Davide Arena</b>Taglio + barba</div><div class="app" style="--k:${k2};top:70px;height:36px"><b>Kevin Z.</b>Taglio uomo</div></div></div>
+  ${pStato>=1?`<div class="wa-msg">Ciao Laura! Ti ricordiamo l'appuntamento domani alle 09:00 per colore e piega. Rispondi 1 per confermare o 2 se devi spostarlo. Salone Giusy<small>09:41 ✓✓</small></div>`:""}
+  <div class="wa-risp ${pStato===2?"vista":""}">1</div>
+  <div class="barra-tot"><span>${pStato===2?"Confermati 2 su 4":"Promemoria da mandare: 3"}</span>${pStato===0?`<button class="mini-btn pieno" data-a="manda">Manda promemoria</button>`:pStato===1?`<span class="chip att">In attesa di risposta…</span>`:`<button class="mini-btn" data-a="ripeti">Rifai</button>`}</div>`}
+$("#provaP").addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b)return;if(b.dataset.a==="ripeti"){pStato=0;provaP();return}pStato=1;provaP();setTimeout(()=>{pStato=2;provaP()},fermo?0:1600)});
+provaP();
+
+// Bancone: scansiona un codice
+const ospiti={K7Q3M:{n:"Marta Russo",pr:"Ciccio",tipo:"Ridotto in lista",prezzo:10,dentro:false},U5A65:{n:"Gabriele Pappalardo",pr:"Giorgia",tipo:"Omaggio",prezzo:0,dentro:true,ora:"23:42"},HN62G:{n:"Nicolò Finocchiaro",pr:"Team Etna",tipo:"Omaggio entro le 00:30",prezzo:0,dentro:false}};
+let dentro=212,esitoB=null;
+function provaB(){const e=esitoB;
+  $("#provaB").innerHTML=`<h4>Porta · Pre-Halloween <small>scrivi o tocca un codice</small></h4><div class="porta">
+  <div class="contatore"><b>${dentro}</b><span style="color:var(--muto);font-weight:600">/ 350 dentro</span><div class="bar"><i style="width:${dentro/350*100}%"></i></div></div>
+  <form class="codice" id="fB"><input id="cB" maxlength="8" autocomplete="off" placeholder="CODICE" aria-label="Codice d'ingresso"><button type="submit">Verifica</button></form>
+  <div class="esempi">Prova con: ${Object.keys(ospiti).map(c=>`<button type="button" data-c="${c}">${c}</button>`).join("")}<button type="button" data-c="ZZZ99">ZZZ99</button></div>
+  ${!e?`<div class="esito attesa"><strong>In attesa</strong><p>Con un lettore QR basta inquadrare il telefono dell'ospite.</p></div>`
+   :e.k==="ok"?`<div class="esito ok"><strong>Valido</strong><p><b>${esc(e.o.n)}</b> · lista ${esc(e.o.pr)} · ${esc(e.o.tipo)} · ${e.o.prezzo?eur(e.o.prezzo):"gratis"}</p><p style="margin-top:10px"><button type="button" class="mini-btn pieno" data-entra="${e.c}">${e.o.prezzo?"Incassa e fai entrare":"Fai entrare"}</button></p></div>`
+   :e.k==="dentro"?`<div class="esito ko"><strong>Già entrato</strong><p>${esc(e.o.n)} è entrato alle ${e.o.ora}. Lo stesso codice non vale due volte.</p></div>`
+   :`<div class="esito ko"><strong>Non valido</strong><p>Il codice ${esc(e.c)} non è in nessuna lista di stasera.</p></div>`}</div>`}
+function verifica(c){c=String(c||"").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(-5);const o=ospiti[c];esitoB=!o?{k:"no",c}:o.dentro?{k:"dentro",c,o}:{k:"ok",c,o};provaB()}
+$("#provaB").addEventListener("submit",e=>{e.preventDefault();verifica($("#cB").value)});
+$("#provaB").addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(b){verifica(b.dataset.c);return}const en=e.target.closest("[data-entra]");if(en){const o=ospiti[en.dataset.entra];o.dentro=true;const d=new Date();o.ora=String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0");dentro++;esitoB=null;provaB()}});
+provaB();
+
+/* copia dei recapiti */
+document.addEventListener("click",e=>{const b=e.target.closest("[data-copia]");if(!b)return;const t=b.dataset.copia,ok=()=>{b.textContent="Copiato";setTimeout(()=>b.textContent="Copia",1600)};
+  if(navigator.clipboard)navigator.clipboard.writeText(t).then(ok,()=>{});});
+})();
+</script>
+</body>
+</html>
