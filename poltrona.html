@@ -147,25 +147,73 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
 .dots i.on{background:var(--accent)}
 
 /* finestre */
-.modal-back{position:fixed;inset:0;background:rgba(0,0,0,.42);z-index:20;display:flex;align-items:flex-start;justify-content:center;padding:max(24px,env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 24px max(12px,env(safe-area-inset-left,0px));overflow-y:auto}
+.modal-back{position:fixed;inset:0;background:rgba(0,0,0,.42);z-index:80;display:flex;align-items:flex-start;justify-content:center;padding:max(24px,env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 24px max(12px,env(safe-area-inset-left,0px));overflow-y:auto}
 .modal{background:var(--surface);border-radius:14px;width:100%;max-width:640px;box-shadow:0 20px 60px rgba(0,0,0,.25);display:flex;flex-direction:column}
 .modal.wide{max-width:900px}
 .modal header{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}
 .modal .body{padding:16px 18px;display:grid;gap:14px}
 .modal footer{padding:12px 18px;border-top:1px solid var(--line);display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
-.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:10px;z-index:40;max-width:min(90vw,520px);font-size:14px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:10px;z-index:90;max-width:min(90vw,520px);font-size:14px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
 .toast.err{background:var(--crit);color:#fff}
 .qr svg{width:180px;height:180px;background:#fff;padding:6px;border-radius:8px}
 
 @media (max-width:860px){.cols,.cols3{grid-template-columns:1fr}}
+@media (max-width:760px){header.top{position:static}}
 @media (max-width:480px){.pinpad{grid-template-columns:repeat(3,64px)}.brand h1{font-size:19px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media print{header.top,nav,.noprint{display:none!important}body{background:#fff;color:#000}}
 
+/* ---------- Telefono e schermi touch ---------- */
+.fgrid{grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr))}
+.modal .body{min-width:0}
+.modal .body>*{min-width:0}
+@media (max-width:760px),(pointer:coarse){
+  .btn{min-height:44px;min-width:44px;padding:10px 14px}
+  .btn.sm{min-height:38px;padding:7px 12px}
+  .btn.ghost.sm{min-width:38px}
+  .seg button{min-height:44px;padding:9px 14px}
+  button.chip{min-height:32px;padding:5px 12px;font-size:13px}
+  nav.tabs button{min-height:46px}
+  input,select,textarea{font-size:16px;min-height:44px}   /* sotto i 16px iPhone ingrandisce la pagina al tocco */
+  textarea{min-height:88px}
+  input[type=checkbox],input[type=radio]{width:22px;height:22px;min-height:0;flex:none}
+  input[type=color]{min-height:44px}
+  label.check{min-height:40px}
+  th{font-size:12px}
+  .badge{font-size:12px;line-height:19px;min-width:19px}
+  .label{font-size:12px}
+  .chip{font-size:12.5px}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  header.top{padding-top:calc(10px + env(safe-area-inset-top,0px))}
+  .brand{gap:10px}
+  .brand .sub{font-size:12.5px}
+  .hright{width:100%;justify-content:flex-end}
+  main{padding-block:14px}
+  h2{font-size:20px}
+  .lead{font-size:15px}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpi b{font-size:21px}
+  /* le finestre diventano schede che salgono dal basso, con i pulsanti sempre visibili */
+  .modal-back{padding:0;align-items:flex-end;overflow:hidden}
+  .modal{max-width:none!important;border-radius:18px 18px 0 0;max-height:calc(100dvh - 18px);max-height:calc(100vh - 18px)}
+  @supports (height:100dvh){.modal{max-height:calc(100dvh - 18px)}}
+  .modal header{padding:14px 16px}
+  .modal .body{padding:14px 16px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+  .modal footer{padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));position:sticky;bottom:0;background:var(--surface)}
+  .modal footer .btn{flex:1 1 auto}
+  .toast{bottom:calc(16px + env(safe-area-inset-bottom,0px));width:calc(100% - 32px);text-align:center}
+  .full-screen{min-height:auto;padding-block:20px}
+  .people{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pinpad{grid-template-columns:repeat(3,76px)}
+  .pinpad button{height:68px}
+}
+
 /* Poltrona: agenda a colonne per collaboratore con griglia oraria, promemoria come fumetti WhatsApp */
 .settimana{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px}
 .sday{flex:0 0 auto;min-width:84px;border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:6px 10px;text-align:left;display:flex;flex-direction:column}
-.sday small{color:var(--muted);font-size:11.5px;text-transform:capitalize}
+.sday small{color:var(--muted);font-size:12.5px;text-transform:capitalize}
 .sday b{font-size:15px;font-variant-numeric:tabular-nums}
 .sday[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
 .sday[aria-pressed="true"] small{color:inherit;opacity:.8}
@@ -175,7 +223,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
 .agh i{width:10px;height:10px;border-radius:50%;flex:none}
 .agh small{margin-left:auto;color:var(--muted);font-weight:500}
 .ore{position:relative}
-.ore div{position:absolute;right:8px;transform:translateY(-50%);font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ore div{position:absolute;right:8px;transform:translateY(-50%);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
 .ore div:first-child{transform:none}
 .col{position:relative;border-left:1px solid var(--line);background-image:linear-gradient(var(--line) 1px,transparent 1px);cursor:copy}
 .chiuso{position:absolute;left:0;right:0;background:repeating-linear-gradient(135deg,var(--sunk) 0 6px,transparent 6px 12px);opacity:.8}
@@ -184,7 +232,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
 .ap{position:absolute;left:4px;right:4px;z-index:1;border:0;border-left:4px solid var(--c);border-radius:7px;background:var(--surface);box-shadow:inset 0 0 0 999px color-mix(in srgb,var(--c) 16%,transparent),0 1px 2px rgba(0,0,0,.08);padding:4px 8px;text-align:left;overflow:hidden;font-size:12.5px;line-height:1.3;color:var(--fg);display:flex;flex-direction:column;cursor:pointer}
 .ap b{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ap span{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ap em{font-style:normal;font-size:11px;font-weight:700;color:var(--c)}
+.ap em{font-style:normal;font-size:12px;font-weight:700;color:var(--c)}
 .ap.corto{flex-direction:row;align-items:center;gap:6px;padding-block:1px}
 .ap.corto span,.ap.corto em{font-size:11.5px}
 .ap.st-completato{opacity:.55}
@@ -196,7 +244,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
 .srv{flex-direction:row;align-items:center;gap:6px;border:1px solid var(--line);border-radius:8px;padding:6px 10px;color:var(--fg);font-size:14px;cursor:pointer}
 .srv:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
 .srv span{display:flex;flex-direction:column;line-height:1.2}
-.srv small{color:var(--muted);font-size:11.5px}
+.srv small{color:var(--muted);font-size:12px}
 .tecnica{margin-top:4px;background:var(--accent-soft);color:var(--fg);border-radius:6px;padding:4px 8px}
 .crit-t{color:var(--crit);font-weight:600}
 .totale{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:10px}
@@ -215,9 +263,13 @@ tr.storno td:last-child{text-decoration:none}
 .orari{display:grid;gap:6px}
 @media (max-width:620px){.srvcat{grid-template-columns:1fr}}
 
+@media (max-width:760px){.ag{grid-template-columns:44px repeat(var(--n,3),minmax(150px,1fr))!important}.ap{font-size:12.5px}.srv{min-height:44px}.qty .btn{min-width:40px}}
+
 
 @media (max-width:760px){header.top{position:static}}
 </style>
+<style>@media (max-width:760px){.toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}main.wrap{padding-bottom:80px}}</style>
+<script>window.DEMO_SITO=1</script>
 </head>
 <body data-radice="../">
 <a class="salta" href="#view">Salta al contenuto</a>
@@ -2867,7 +2919,7 @@ function renderAgenda(){
   <div class="row"><button class="btn" data-act="agGiorno" data-k="${plusDays(d,-1)}" aria-label="Giorno prima">‹</button><button class="btn" data-act="agGiorno" data-k="${oggi()}">Oggi</button><button class="btn" data-act="agGiorno" data-k="${plusDays(d,1)}" aria-label="Giorno dopo">›</button><input type="date" id="agData" data-chg="agData" value="${d}" style="width:auto" aria-label="Vai al giorno">
   ${ruolo()==="collaboratore"?`<label class="check"><input type="checkbox" data-chg="agMiei" ${P.soloMiei?"checked":""}> Solo i miei</label>`:""}<button class="btn primary" data-act="apNuovo">+ Appuntamento</button></div></div>
   <div class="settimana">${week.map(k=>{const n=S.appuntamenti.filter(a=>a.data===k&&occ(a)&&!a.blocco).length;return`<button class="sday" aria-pressed="${k===d}" data-act="agGiorno" data-k="${k}"><small>${k===oggi()?"Oggi":new Date(k+"T12:00").toLocaleDateString("it-IT",{weekday:"short"})} ${+k.slice(8)}</small><b>${aperto(k)?n:"chiuso"}</b></button>`}).join("")}</div>
-  <div class="agwrap"><div class="ag" style="grid-template-columns:52px repeat(${Math.max(1,cols.length)},minmax(170px,1fr))">
+  <div class="agwrap"><div class="ag" style="--n:${Math.max(1,cols.length)};grid-template-columns:52px repeat(${Math.max(1,cols.length)},minmax(170px,1fr))">
   <div class="agh"></div>${cols.map(x=>`<div class="agh"><i style="background:${esc(x.colore)}"></i>${esc(x.nome)}<small>${del.filter(a=>a.sid===x.id&&occ(a)&&!a.blocco).length}</small></div>`).join("")}
   <div class="ore" style="height:${H}px">${ore}</div>
   ${cols.map(x=>`<div class="col" data-act="agVuoto" data-sid="${x.id}" data-ini="${ini}" style="height:${H}px;background-size:100% ${60*PXM}px">${fasce}${nowM!=null&&nowM>=ini&&nowM<fin?`<div class="adesso" style="top:${(nowM-ini)*PXM}px"></div>`:""}
@@ -3494,7 +3546,7 @@ const lic=()=>({tipo:"prova",stato:"prova",scadenza:L.dkey(Date.now()+30*864e5),
 const utente=t=>{const s=t&&sessioni[t];return s?S.staff.find(x=>x.id===s.sid&&x.attivo!==false)||null:null};
 const ascoltatori=new Set();
 function stato(c){const u=utente(c.token);if(!u){c.emit("esci",{});return}
-  const d=Object.assign(L.statoPubblico(S,u),{io:u.id,meta:{prodotto:PRODOTTO,versione:"1.0.0",licenza:lic(),ora:Date.now(),giorno:L.giorno(Date.now()),tecnico:false,tecnicoAttivo:false,demo:true,copiaEsterna:{}}});
+  const d=Object.assign(L.statoPubblico(S,u),{io:u.id,meta:{prodotto:PRODOTTO,versione:"1.0.1",licenza:lic(),ora:Date.now(),giorno:L.giorno(Date.now()),tecnico:false,tecnicoAttivo:false,demo:true,copiaEsterna:{}}});
   c.emit("stato",JSON.parse(JSON.stringify(d)))}
 const diffondi=()=>ascoltatori.forEach(stato);
 class FintaSorgente{constructor(url){this.token=new URL(url,location.href).searchParams.get("t");this.l={};this.readyState=1;ascoltatori.add(this);setTimeout(()=>{this.onopen&&this.onopen();stato(this)},30)}
@@ -3505,14 +3557,14 @@ const fetchVero=window.fetch.bind(window);
 window.fetch=async(url,opt)=>{
   const u=new URL(url,location.href);if(!u.pathname.startsWith("/api/"))return fetchVero(url,opt);
   opt=opt||{};const p=u.pathname,b=opt.body?JSON.parse(opt.body):{},tok=((opt.headers||{}).Authorization||"").replace("Bearer ","")||u.searchParams.get("t");
-  if(p==="/api/info")return risposta(200,{prodotto:PRODOTTO,configurato:true,demo:true,versione:"1.0.0",nome:S.settings.nome,indirizzi:[],tecnico:false,licenza:lic(),assistenza:lic().assistenza,ruoli:L.RUOLI});
+  if(p==="/api/info")return risposta(200,{prodotto:PRODOTTO,configurato:true,demo:true,versione:"1.0.1",nome:S.settings.nome,indirizzi:[],tecnico:false,licenza:lic(),assistenza:lic().assistenza,ruoli:L.RUOLI});
   if(p==="/api/staff")return risposta(200,S.staff.filter(x=>x.attivo!==false).map(({id,nome,ruolo})=>({id,nome,ruolo})));
   if(p==="/api/login"){const x=S.staff.find(y=>y.id===b.id&&y.attivo!==false);if(!x||!L.verificaPin(x,b.pin))return risposta(401,{errore:"PIN sbagliato (nella demo è 1234)"});const t=hex(crypto.getRandomValues(new Uint8Array(16)));sessioni[t]={sid:x.id};salva();return risposta(200,{token:t,utente:{id:x.id,nome:x.nome,ruolo:x.ruolo}})}
   if(p.startsWith("/api/sblocco")||p.startsWith("/api/tecnico"))return risposta(400,{errore:"Nella demo lo sblocco e l'accesso dell'assistenza sono disattivati"});
   const us=utente(tok);if(!us)return risposta(401,{errore:"Accesso scaduto: entra di nuovo"});
   if(p==="/api/io")return risposta(200,{id:us.id,nome:us.nome,ruolo:us.ruolo});
   if(p==="/api/logout"){delete sessioni[tok];salva();return risposta(200,{ok:true})}
-  if(p==="/api/diagnostica")return risposta(200,{prodotto:PRODOTTO.nome,versione:"1.0.0 demo",locale:S.settings.nome,citta:"Catania",utente:us.nome,licenza:"demo",sistema:"browser",indirizzi:[],dispositiviCollegati:1,copiaEsterna:"—",ora:new Date().toLocaleString("it-IT"),ultimiErrori:[]});
+  if(p==="/api/diagnostica")return risposta(200,{prodotto:PRODOTTO.nome,versione:"1.0.1 demo",locale:S.settings.nome,citta:"Catania",utente:us.nome,licenza:"demo",sistema:"browser",indirizzi:[],dispositiviCollegati:1,copiaEsterna:"—",ora:new Date().toLocaleString("it-IT"),ultimiErrori:[]});
   if(p==="/api/azione"){const bozza=structuredClone(S);const r=L.applica(bozza,b,us,{tecnicoLibero:true});if(r.errore)return risposta(400,{errore:r.errore});S=bozza;salva();setTimeout(()=>{diffondi();if(r.avviso)ascoltatori.forEach(c=>c.emit("avviso",{msg:r.avviso.msg}))},0);if(r.revoca){for(const[t,s]of Object.entries(sessioni))if(s.sid===r.revoca&&t!==tok)delete sessioni[t]}return risposta(200,{ok:true,msg:r.msg,nuovoId:r.nuovoId,dati:r.dati})}
   return risposta(400,{errore:"Nella demo questa funzione non è disponibile: c'è nella versione installata"});
 };
@@ -3521,7 +3573,7 @@ window.fetch=async(url,opt)=>{
 /* ---------- Ritocchi della demo ---------- */
 APP.ACT.ricomincia=()=>ricominciaDemo();
 if(APP.ACT.qrScarica)APP.ACT.qrScarica=()=>toast("Nella demo l'immagine non si scarica: fai uno screenshot del QR",true);
-{const b=APP.banners;APP.banners=()=>[`<div class="banner info">Demo di Poltrona: i dati restano solo su questo dispositivo. Tutti entrano con il PIN 1234. <button class="btn sm" data-act="ricomincia">Ricomincia da capo</button></div>`].concat(b?b():[])}
+{const b=APP.banners;APP.banners=()=>[`<div class="banner info">Demo di Poltrona: i dati restano solo su questo dispositivo. Tutti entrano con il PIN 1234. <button class="btn sm" data-act="ricomincia">Ricomincia da capo</button>${window.DEMO_SITO?'<a class="btn sm" href="../">← Torna al sito</a>':''}</div>`].concat(b?b():[])}
 {const sl=schermataLogin;schermataLogin=function(){sl();const t=setInterval(()=>{const p=document.querySelector(".people");if(p){clearInterval(t);p.insertAdjacentHTML("beforebegin",'<div class="banner info" style="justify-content:center;max-width:720px;margin:0 auto">Demo: scegli una persona e scrivi il PIN <b>1234</b>. Ogni ruolo vede cose diverse.</div>')}},60)}}
 document.addEventListener("click",e=>{const a=e.target.closest('a[href^="/api/"]');if(a){e.preventDefault();e.stopImmediatePropagation();toast("Nella demo i file non si scaricano: c'è nella versione installata",true)}},true);
 
@@ -3529,6 +3581,5 @@ Object.assign(ACT,APP.ACT||{});
 avvio();
 </script>
 
-<nav aria-label="Torna al sito"><a href="../" aria-label="Torna al sito Famiglia Tavolo" style="position:fixed;left:calc(88px + env(safe-area-inset-left,0px));bottom:calc(26px + env(safe-area-inset-bottom,0px));z-index:30;background:#141518;color:#fff;text-decoration:none;font:600 13px system-ui,sans-serif;padding:9px 14px;border-radius:99px;box-shadow:0 8px 20px -8px rgba(0,0,0,.5)">← Famiglia Tavolo</a></nav>
 </body>
 </html>

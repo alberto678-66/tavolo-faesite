@@ -294,6 +294,40 @@ footer{border-top:1px solid var(--linea-s);margin-top:90px;padding-block:28px ca
   .schermo{aspect-ratio:auto;min-height:330px}
   .codice input{font-size:20px}
 }
+
+/* ---------- telefono: misure comode per il dito e testi leggibili ---------- */
+[id]{scroll-margin-top:88px}
+.sel-prod button,.pausa{min-height:44px}
+.mini-btn{min-height:44px;padding:10px 14px}
+.esempi button{min-height:44px;padding:8px 12px}
+.recapito .az{min-height:44px;display:inline-flex;align-items:center}
+.legali a{display:inline-block;padding-block:11px}
+.marchio{padding-block:9px}
+.tav small{font-size:12.5px}
+.agenda .ore{font-size:12px}
+.passo .quando{font-size:12.5px}
+.recapito span{font-size:12.5px}
+.prova::before{font-size:12px}
+footer{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
+@media (max-width:640px){
+  .hero .azioni .btn{flex:1 1 100%;justify-content:center}
+  .p-azioni .btn{flex:1 1 auto;justify-content:center}
+  .tablet{transform:none;border-radius:22px;padding:10px}
+  .scena:hover .tablet{transform:none}
+  .mappa{gap:8px}
+  .tav{border-radius:12px}
+  .codice button{min-height:52px}
+  .finale .riga{gap:28px}
+  .confronto .carta ul{font-size:16px}
+  details summary{padding-block:18px}
+}
+@media (max-width:380px){
+  .nav .btn-wa{display:none}
+  .nav .wrap{gap:10px}
+  .mappa{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  .tav b{font-size:16px}.tav small{font-size:12px;letter-spacing:-.02em}
+}
+@media (hover:none){.btn:hover,.tav:hover{transform:none}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}

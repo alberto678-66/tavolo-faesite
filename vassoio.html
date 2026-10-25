@@ -147,27 +147,75 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
 .dots i.on{background:var(--accent)}
 
 /* finestre */
-.modal-back{position:fixed;inset:0;background:rgba(0,0,0,.42);z-index:20;display:flex;align-items:flex-start;justify-content:center;padding:max(24px,env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 24px max(12px,env(safe-area-inset-left,0px));overflow-y:auto}
+.modal-back{position:fixed;inset:0;background:rgba(0,0,0,.42);z-index:80;display:flex;align-items:flex-start;justify-content:center;padding:max(24px,env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 24px max(12px,env(safe-area-inset-left,0px));overflow-y:auto}
 .modal{background:var(--surface);border-radius:14px;width:100%;max-width:640px;box-shadow:0 20px 60px rgba(0,0,0,.25);display:flex;flex-direction:column}
 .modal.wide{max-width:900px}
 .modal header{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}
 .modal .body{padding:16px 18px;display:grid;gap:14px}
 .modal footer{padding:12px 18px;border-top:1px solid var(--line);display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
-.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:10px;z-index:40;max-width:min(90vw,520px);font-size:14px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:10px;z-index:90;max-width:min(90vw,520px);font-size:14px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
 .toast.err{background:var(--crit);color:#fff}
 .qr svg{width:180px;height:180px;background:#fff;padding:6px;border-radius:8px}
 
 @media (max-width:860px){.cols,.cols3{grid-template-columns:1fr}}
+@media (max-width:760px){header.top{position:static}}
 @media (max-width:480px){.pinpad{grid-template-columns:repeat(3,64px)}.brand h1{font-size:19px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media print{header.top,nav,.noprint{display:none!important}body{background:#fff;color:#000}}
 
+/* ---------- Telefono e schermi touch ---------- */
+.fgrid{grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr))}
+.modal .body{min-width:0}
+.modal .body>*{min-width:0}
+@media (max-width:760px),(pointer:coarse){
+  .btn{min-height:44px;min-width:44px;padding:10px 14px}
+  .btn.sm{min-height:38px;padding:7px 12px}
+  .btn.ghost.sm{min-width:38px}
+  .seg button{min-height:44px;padding:9px 14px}
+  button.chip{min-height:32px;padding:5px 12px;font-size:13px}
+  nav.tabs button{min-height:46px}
+  input,select,textarea{font-size:16px;min-height:44px}   /* sotto i 16px iPhone ingrandisce la pagina al tocco */
+  textarea{min-height:88px}
+  input[type=checkbox],input[type=radio]{width:22px;height:22px;min-height:0;flex:none}
+  input[type=color]{min-height:44px}
+  label.check{min-height:40px}
+  th{font-size:12px}
+  .badge{font-size:12px;line-height:19px;min-width:19px}
+  .label{font-size:12px}
+  .chip{font-size:12.5px}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  header.top{padding-top:calc(10px + env(safe-area-inset-top,0px))}
+  .brand{gap:10px}
+  .brand .sub{font-size:12.5px}
+  .hright{width:100%;justify-content:flex-end}
+  main{padding-block:14px}
+  h2{font-size:20px}
+  .lead{font-size:15px}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpi b{font-size:21px}
+  /* le finestre diventano schede che salgono dal basso, con i pulsanti sempre visibili */
+  .modal-back{padding:0;align-items:flex-end;overflow:hidden}
+  .modal{max-width:none!important;border-radius:18px 18px 0 0;max-height:calc(100dvh - 18px);max-height:calc(100vh - 18px)}
+  @supports (height:100dvh){.modal{max-height:calc(100dvh - 18px)}}
+  .modal header{padding:14px 16px}
+  .modal .body{padding:14px 16px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+  .modal footer{padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));position:sticky;bottom:0;background:var(--surface)}
+  .modal footer .btn{flex:1 1 auto}
+  .toast{bottom:calc(16px + env(safe-area-inset-bottom,0px));width:calc(100% - 32px);text-align:center}
+  .full-screen{min-height:auto;padding-block:20px}
+  .people{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pinpad{grid-template-columns:repeat(3,76px)}
+  .pinpad button{height:68px}
+}
+
 /* Vassoio: striscia dei giorni di ritiro, schede ordine con ora a sinistra, foglio di produzione */
 .days{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
 .day{flex:0 0 auto;min-width:76px;text-align:left;padding:7px 10px;display:flex;flex-direction:column;gap:1px;border:1px solid var(--line);background:var(--surface);border-radius:9px}
-.day small{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.day small{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
 .day strong{font-size:18px;font-variant-numeric:tabular-nums;line-height:1.1}
-.day em{font-style:normal;font-size:11.5px;color:var(--muted);white-space:nowrap;max-width:110px;overflow:hidden;text-overflow:ellipsis}
+.day em{font-style:normal;font-size:12px;color:var(--muted);white-space:nowrap;max-width:110px;overflow:hidden;text-overflow:ellipsis}
 .day.festa em{color:var(--accent);font-weight:700}
 .day[aria-pressed="true"]{background:var(--fg);border-color:var(--fg);color:var(--bg)}
 .day[aria-pressed="true"] small,.day[aria-pressed="true"] em{color:inherit;opacity:.85}
@@ -175,7 +223,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
 .ord.ritirato,.ord.annullato{opacity:.62}
 .ord.pronto{border-left:4px solid var(--ok)}
 .ord .ora{font-size:18px;font-weight:700;display:flex;flex-direction:column;line-height:1.1}
-.ord .ora small{font-size:11.5px;color:var(--muted);font-weight:500;font-family:var(--f-body)}
+.ord .ora small{font-size:12.5px;color:var(--muted);font-weight:500;font-family:var(--f-body)}
 .ord .righe{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:4px;font-size:14px}
 .ord .righe i{color:var(--muted)}
 .ord .lato{display:flex;flex-direction:column;align-items:flex-end;gap:6px;text-align:right}
@@ -197,12 +245,16 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
 .chart div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;gap:3px;min-width:0}
 .chart i{display:block;width:100%;background:var(--accent);opacity:.55;border-radius:3px 3px 0 0}
 .chart i.f{opacity:1}
-.chart small{font-size:10.5px;color:var(--muted);height:13px}
+.chart small{font-size:12px;color:var(--muted);height:15px}
 @media (max-width:620px){.ord{grid-template-columns:minmax(0,1fr) auto}.ord .ora{grid-column:1/-1;flex-direction:row;gap:8px;align-items:baseline}.ord .lato{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center}}
+
+@media (max-width:760px){.pick{grid-template-columns:repeat(2,minmax(0,1fr))}.righe-t input{min-height:40px}.ord{padding:12px}.prodli{min-height:52px}}
 
 
 @media (max-width:760px){header.top{position:static}}
 </style>
+<style>@media (max-width:760px){.toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}main.wrap{padding-bottom:80px}}</style>
+<script>window.DEMO_SITO=1</script>
 </head>
 <body data-radice="../">
 <a class="salta" href="#view">Salta al contenuto</a>
@@ -3474,7 +3526,7 @@ const lic=()=>({tipo:"prova",stato:"prova",scadenza:L.dkey(Date.now()+30*864e5),
 const utente=t=>{const s=t&&sessioni[t];return s?S.staff.find(x=>x.id===s.sid&&x.attivo!==false)||null:null};
 const ascoltatori=new Set();
 function stato(c){const u=utente(c.token);if(!u){c.emit("esci",{});return}
-  const d=Object.assign(L.statoPubblico(S,u),{io:u.id,meta:{prodotto:PRODOTTO,versione:"1.0.0",licenza:lic(),ora:Date.now(),giorno:L.giorno(Date.now()),tecnico:false,tecnicoAttivo:false,demo:true,copiaEsterna:{}}});
+  const d=Object.assign(L.statoPubblico(S,u),{io:u.id,meta:{prodotto:PRODOTTO,versione:"1.0.1",licenza:lic(),ora:Date.now(),giorno:L.giorno(Date.now()),tecnico:false,tecnicoAttivo:false,demo:true,copiaEsterna:{}}});
   c.emit("stato",JSON.parse(JSON.stringify(d)))}
 const diffondi=()=>ascoltatori.forEach(stato);
 class FintaSorgente{constructor(url){this.token=new URL(url,location.href).searchParams.get("t");this.l={};this.readyState=1;ascoltatori.add(this);setTimeout(()=>{this.onopen&&this.onopen();stato(this)},30)}
@@ -3485,14 +3537,14 @@ const fetchVero=window.fetch.bind(window);
 window.fetch=async(url,opt)=>{
   const u=new URL(url,location.href);if(!u.pathname.startsWith("/api/"))return fetchVero(url,opt);
   opt=opt||{};const p=u.pathname,b=opt.body?JSON.parse(opt.body):{},tok=((opt.headers||{}).Authorization||"").replace("Bearer ","")||u.searchParams.get("t");
-  if(p==="/api/info")return risposta(200,{prodotto:PRODOTTO,configurato:true,demo:true,versione:"1.0.0",nome:S.settings.nome,indirizzi:[],tecnico:false,licenza:lic(),assistenza:lic().assistenza,ruoli:L.RUOLI});
+  if(p==="/api/info")return risposta(200,{prodotto:PRODOTTO,configurato:true,demo:true,versione:"1.0.1",nome:S.settings.nome,indirizzi:[],tecnico:false,licenza:lic(),assistenza:lic().assistenza,ruoli:L.RUOLI});
   if(p==="/api/staff")return risposta(200,S.staff.filter(x=>x.attivo!==false).map(({id,nome,ruolo})=>({id,nome,ruolo})));
   if(p==="/api/login"){const x=S.staff.find(y=>y.id===b.id&&y.attivo!==false);if(!x||!L.verificaPin(x,b.pin))return risposta(401,{errore:"PIN sbagliato (nella demo è 1234)"});const t=hex(crypto.getRandomValues(new Uint8Array(16)));sessioni[t]={sid:x.id};salva();return risposta(200,{token:t,utente:{id:x.id,nome:x.nome,ruolo:x.ruolo}})}
   if(p.startsWith("/api/sblocco")||p.startsWith("/api/tecnico"))return risposta(400,{errore:"Nella demo lo sblocco e l'accesso dell'assistenza sono disattivati"});
   const us=utente(tok);if(!us)return risposta(401,{errore:"Accesso scaduto: entra di nuovo"});
   if(p==="/api/io")return risposta(200,{id:us.id,nome:us.nome,ruolo:us.ruolo});
   if(p==="/api/logout"){delete sessioni[tok];salva();return risposta(200,{ok:true})}
-  if(p==="/api/diagnostica")return risposta(200,{prodotto:PRODOTTO.nome,versione:"1.0.0 demo",locale:S.settings.nome,citta:"Catania",utente:us.nome,licenza:"demo",sistema:"browser",indirizzi:[],dispositiviCollegati:1,copiaEsterna:"—",ora:new Date().toLocaleString("it-IT"),ultimiErrori:[]});
+  if(p==="/api/diagnostica")return risposta(200,{prodotto:PRODOTTO.nome,versione:"1.0.1 demo",locale:S.settings.nome,citta:"Catania",utente:us.nome,licenza:"demo",sistema:"browser",indirizzi:[],dispositiviCollegati:1,copiaEsterna:"—",ora:new Date().toLocaleString("it-IT"),ultimiErrori:[]});
   if(p==="/api/azione"){const bozza=structuredClone(S);const r=L.applica(bozza,b,us,{tecnicoLibero:true});if(r.errore)return risposta(400,{errore:r.errore});S=bozza;salva();setTimeout(()=>{diffondi();if(r.avviso)ascoltatori.forEach(c=>c.emit("avviso",{msg:r.avviso.msg}))},0);if(r.revoca){for(const[t,s]of Object.entries(sessioni))if(s.sid===r.revoca&&t!==tok)delete sessioni[t]}return risposta(200,{ok:true,msg:r.msg,nuovoId:r.nuovoId,dati:r.dati})}
   return risposta(400,{errore:"Nella demo questa funzione non è disponibile: c'è nella versione installata"});
 };
@@ -3501,7 +3553,7 @@ window.fetch=async(url,opt)=>{
 /* ---------- Ritocchi della demo ---------- */
 APP.ACT.ricomincia=()=>ricominciaDemo();
 if(APP.ACT.qrScarica)APP.ACT.qrScarica=()=>toast("Nella demo l'immagine non si scarica: fai uno screenshot del QR",true);
-{const b=APP.banners;APP.banners=()=>[`<div class="banner info">Demo di Vassoio: i dati restano solo su questo dispositivo. Tutti entrano con il PIN 1234. <button class="btn sm" data-act="ricomincia">Ricomincia da capo</button></div>`].concat(b?b():[])}
+{const b=APP.banners;APP.banners=()=>[`<div class="banner info">Demo di Vassoio: i dati restano solo su questo dispositivo. Tutti entrano con il PIN 1234. <button class="btn sm" data-act="ricomincia">Ricomincia da capo</button>${window.DEMO_SITO?'<a class="btn sm" href="../">← Torna al sito</a>':''}</div>`].concat(b?b():[])}
 {const sl=schermataLogin;schermataLogin=function(){sl();const t=setInterval(()=>{const p=document.querySelector(".people");if(p){clearInterval(t);p.insertAdjacentHTML("beforebegin",'<div class="banner info" style="justify-content:center;max-width:720px;margin:0 auto">Demo: scegli una persona e scrivi il PIN <b>1234</b>. Ogni ruolo vede cose diverse.</div>')}},60)}}
 document.addEventListener("click",e=>{const a=e.target.closest('a[href^="/api/"]');if(a){e.preventDefault();e.stopImmediatePropagation();toast("Nella demo i file non si scaricano: c'è nella versione installata",true)}},true);
 
@@ -3509,6 +3561,5 @@ Object.assign(ACT,APP.ACT||{});
 avvio();
 </script>
 
-<nav aria-label="Torna al sito"><a href="../" aria-label="Torna al sito Famiglia Tavolo" style="position:fixed;left:calc(88px + env(safe-area-inset-left,0px));bottom:calc(26px + env(safe-area-inset-bottom,0px));z-index:30;background:#141518;color:#fff;text-decoration:none;font:600 13px system-ui,sans-serif;padding:9px 14px;border-radius:99px;box-shadow:0 8px 20px -8px rgba(0,0,0,.5)">← Famiglia Tavolo</a></nav>
 </body>
 </html>

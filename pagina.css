@@ -40,3 +40,9 @@ footer{background:var(--lava);color:var(--muto-s);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:28px calc(90px + env(safe-area-inset-bottom,0px))}
 footer a{color:#F2F1EE}
 @media (max-width:860px){.corpo{grid-template-columns:minmax(0,1fr);gap:28px}.indice{position:static;background:var(--carta);border:1px solid var(--linea);border-radius:16px;padding:16px 18px}}
+
+[id]{scroll-margin-top:20px}
+footer a{display:inline-block;padding:11px 8px;min-width:44px;text-align:center}
+.marchio{padding-block:9px}
+.torna{min-height:44px;display:inline-flex;align-items:center}
+@media (max-width:640px){body{font-size:16.5px}.titolo{padding-block:36px 44px}.corpo{padding-block:32px 60px}.indice a{display:inline-block;padding-block:5px}}
