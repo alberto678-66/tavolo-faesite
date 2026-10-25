@@ -7,6 +7,8 @@
 <meta name="description" content="Demo di Poltrona: provalo dal telefono, il PIN di tutti è 1234.">
 <meta name="theme-color" content="#7A3B6B">
 <meta name="robots" content="noindex">
+<link rel="stylesheet" href="../assets/accessibilita.css">
+<script src="../assets/accessibilita.js"></script>
 <style>
 
 /* Layout: app a schede per ruolo, pannelli affiancati che si impilano su telefono, finestre modali per le azioni.
@@ -217,7 +219,9 @@ tr.storno td:last-child{text-decoration:none}
 @media (max-width:760px){header.top{position:static}}
 </style>
 </head>
-<body>
+<body data-radice="../">
+<a class="salta" href="#view">Salta al contenuto</a>
+<section aria-label="Demo di Poltrona" class="sr-only"><h1>Demo di Poltrona</h1></section>
 
 
 <header class="top" id="top" hidden></header>
@@ -3525,6 +3529,6 @@ Object.assign(ACT,APP.ACT||{});
 avvio();
 </script>
 
-<a href="../" style="position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;background:#141518;color:#fff;text-decoration:none;font:600 13px system-ui,sans-serif;padding:9px 14px;border-radius:99px;box-shadow:0 8px 20px -8px rgba(0,0,0,.5)">← Famiglia Tavolo</a>
+<nav aria-label="Torna al sito"><a href="../" aria-label="Torna al sito Famiglia Tavolo" style="position:fixed;left:calc(88px + env(safe-area-inset-left,0px));bottom:calc(26px + env(safe-area-inset-bottom,0px));z-index:30;background:#141518;color:#fff;text-decoration:none;font:600 13px system-ui,sans-serif;padding:9px 14px;border-radius:99px;box-shadow:0 8px 20px -8px rgba(0,0,0,.5)">← Famiglia Tavolo</a></nav>
 </body>
 </html>

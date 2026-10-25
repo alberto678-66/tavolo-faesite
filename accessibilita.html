@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Accessibilità · Famiglia Tavolo</title>
+<meta name="description" content="Dichiarazione di accessibilità del sito della Famiglia Tavolo: come usare il sito con tastiera, lettore di schermo, testo grande e alto contrasto, e come segnalarci un problema.">
+<meta name="theme-color" content="#141518">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141518'/%3E%3Crect x='12' y='12' width='18' height='18' rx='5' fill='%233FA37A'/%3E%3Crect x='34' y='12' width='18' height='18' rx='5' fill='%23E07A52'/%3E%3Crect x='12' y='34' width='18' height='18' rx='5' fill='%23C975B2'/%3E%3Crect x='34' y='34' width='18' height='18' rx='5' fill='%23F2B33D'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/font.css">
+<link rel="stylesheet" href="assets/pagina.css">
+<link rel="stylesheet" href="assets/accessibilita.css">
+<script src="assets/accessibilita.js"></script>
+</head>
+<body data-radice="">
+<a class="salta" href="#contenuto">Salta al contenuto</a>
+<header class="testa">
+  <div class="wrap">
+    <div class="barra"><a class="marchio" href="./"><span class="quad" aria-hidden="true"><i style="background:var(--tavolo)"></i><i style="background:var(--vassoio)"></i><i style="background:var(--poltrona)"></i><i style="background:var(--bancone)"></i></span>Famiglia Tavolo</a><a class="torna" href="./">← Torna al sito</a></div>
+    <div class="titolo"><p class="eyebrow">Dichiarazione di accessibilità</p><h1>Un sito che tutti possono usare</h1><p class="agg">Ultimo aggiornamento: 25 ottobre 2026 · riferimento: WCAG 2.1 livello AA (norma UNI CEI EN 301549)</p></div>
+  </div>
+</header>
+
+<main id="contenuto" tabindex="-1">
+  <div class="wrap corpo">
+    <nav class="indice" aria-label="Indice della pagina"><h2>In questa pagina</h2><ol>
+      <li><a href="#impegno">Il nostro impegno</a></li><li><a href="#stato">Stato di conformità</a></li><li><a href="#pannello">Pannello accessibilità</a></li><li><a href="#come">Come usare il sito</a></li>
+      <li><a href="#limiti">Limiti conosciuti</a></li><li><a href="#verifica">Come lo abbiamo verificato</a></li><li><a href="#segnala">Segnala un problema</a></li></ol></nav>
+
+    <article class="testo">
+      <h2 id="impegno">Il nostro impegno</h2>
+      <p>Vogliamo che chiunque possa conoscere i nostri programmi e contattarci: chi vede poco o non vede, chi usa solo la tastiera, chi ha difficoltà motorie, chi ha bisogno di testi più calmi e leggibili.</p>
+      <p>Per una piccola impresa come la nostra la legge italiana sull'accessibilità (Legge 4/2004) e l'European Accessibility Act non rendono obbligatoria questa dichiarazione. La pubblichiamo lo stesso, perché un sito accessibile è un sito migliore per tutti.</p>
+
+      <h2 id="stato">Stato di conformità</h2>
+      <div class="tw"><table>
+        <thead><tr><th scope="col">Parte del sito</th><th scope="col">Stato</th></tr></thead>
+        <tbody>
+          <tr><td>Pagina principale, Privacy policy, questa pagina</td><td><span class="stato">Conforme</span> a WCAG 2.1 livello AA</td></tr>
+          <tr><td>Demo complete di Vassoio, Poltrona e Bancone (cartella "demo")</td><td><span class="stato parz">Parzialmente conforme</span>: vedi <a href="#limiti">limiti conosciuti</a></td></tr>
+        </tbody></table></div>
+
+      <h2 id="pannello">Pannello accessibilità</h2>
+      <p>In basso a sinistra, su ogni pagina, c'è il pulsante blu con la figura umana. Apre un pannello con queste opzioni:</p>
+      <ul>
+        <li><b>Testo più grande</b>: due livelli di ingrandimento; la pagina si riordina senza farti scorrere di lato.</li>
+        <li><b>Alto contrasto</b>: bianco e nero puri, bordi marcati, link sottolineati.</li>
+        <li><b>Ferma le animazioni</b>: blocca anteprime, dissolvenze e la striscia che scorre.</li>
+        <li><b>Carattere più leggibile</b>: usa Atkinson Hyperlegible, un carattere disegnato per chi vede poco, con più spazio tra le lettere.</li>
+        <li><b>Più spazio tra le righe</b>: interlinea più ampia, utile anche in caso di dislessia.</li>
+        <li><b>Evidenzia link e pulsanti</b>: contorna tutto ciò che si può toccare.</li>
+      </ul>
+      <p>Le scelte restano salvate su questo dispositivo e valgono su tutte le pagine. "Ripristina" torna alle impostazioni normali. Il pannello si apre e si chiude anche da tastiera; il tasto Esc lo chiude.</p>
+
+      <h2 id="come">Come usare il sito</h2>
+      <h3>Con la tastiera</h3>
+      <ul>
+        <li>Il primo tasto Tab mostra "Salta al contenuto", per andare dritto ai testi.</li>
+        <li>Con Tab e Maiusc+Tab passi da un elemento all'altro nell'ordine di lettura; l'elemento attivo ha un contorno nero e giallo ben visibile.</li>
+        <li>Invio o barra spaziatrice attivano pulsanti, domande frequenti e prove (tavoli, produzione, promemoria, codici).</li>
+        <li>Esc chiude il menu del telefono e il pannello accessibilità.</li>
+      </ul>
+      <h3>Con un lettore di schermo</h3>
+      <ul>
+        <li>Ogni pagina ha titoli in ordine (un titolo principale, poi sezioni e sottosezioni) e zone riconoscibili: intestazione, navigazione, contenuto, piè di pagina.</li>
+        <li>Le prove interattive annunciano cosa succede: per esempio "Tavolo 3: occupato" o "Valido: Marta Russo, lista Ciccio".</li>
+        <li>L'anteprima animata in alto è decorativa e viene saltata; al suo posto c'è una breve descrizione.</li>
+        <li>I link che aprono una nuova scheda (WhatsApp, Instagram, TikTok) lo dicono.</li>
+      </ul>
+      <h3>Movimento</h3>
+      <p>Se nel telefono o nel computer hai attivato "Riduci movimento", il sito lo rispetta da solo. In alto c'è anche il pulsante "Pausa animazioni".</p>
+      <h3>Zoom e rotazione</h3>
+      <p>Puoi ingrandire con lo zoom del browser fino al 400% e usare il telefono in verticale o in orizzontale: i contenuti si riordinano in una colonna.</p>
+
+      <h2 id="limiti">Limiti conosciuti</h2>
+      <ul>
+        <li><b>Demo complete</b> (Vassoio, Poltrona, Bancone): sono la riproduzione dei programmi veri, pensati per tablet in negozio. Si usano con tastiera e lettore di schermo, ma alcune parti non sono ancora del tutto descritte: la griglia dell'agenda di Poltrona, alcuni grafici dei report e i messaggi brevi che compaiono dopo un'azione. Ci stiamo lavorando; se ti serve vedere una funzione, te la mostriamo noi al telefono o di persona.</li>
+        <li><b>Contenuti esterni</b>: WhatsApp, Instagram e TikTok sono servizi di altre aziende e hanno una loro accessibilità.</li>
+      </ul>
+
+      <h2 id="verifica">Come lo abbiamo verificato</h2>
+      <p>Valutazione fatta da noi il 25 ottobre 2026 con:</p>
+      <ul>
+        <li>controllo automatico con axe-core 4 (regole WCAG 2.0, 2.1 e 2.2 livelli A e AA), su computer e telefono, normale e con tutte le opzioni del pannello: nessun errore;</li>
+        <li>prova completa con la sola tastiera su tutte le pagine;</li>
+        <li>controllo del contrasto dei colori (almeno 4,5:1 per i testi, 3:1 per titoli grandi ed elementi grafici);</li>
+        <li>prova con zoom al 200% e al 400% e a larghezza telefono (320 pixel).</li>
+      </ul>
+
+      <h2 id="segnala">Segnala un problema</h2>
+      <p>Se qualcosa non funziona con il tuo modo di navigare, diccelo: lo sistemiamo e intanto ti diamo l'informazione in un altro modo.</p>
+      <div class="riquadro">
+        <p>Email: <b>teampvtads@gmail.com</b></p>
+        <p>Telefono e WhatsApp: <b>+39 349 699 1941</b></p>
+        <p>Ti rispondiamo entro 30 giorni, di solito molto prima. Indica la pagina, cosa stavi facendo e, se vuoi, cosa usi (per esempio lettore di schermo, tastiera, ingrandimento).</p>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Famiglia Tavolo · Catania</span><span><a href="./">Sito</a> · <a href="privacy.html">Privacy policy</a></span></div></footer>
+</body>
+</html>

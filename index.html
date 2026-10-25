@@ -11,11 +11,11 @@
 <meta property="og:description" content="Quattro gestionali per quattro mestieri. Installazione e assistenza a Catania. 30 giorni di prova.">
 <meta property="og:locale" content="it_IT">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141518'/%3E%3Crect x='12' y='12' width='18' height='18' rx='5' fill='%233FA37A'/%3E%3Crect x='34' y='12' width='18' height='18' rx='5' fill='%23E07A52'/%3E%3Crect x='12' y='34' width='18' height='18' rx='5' fill='%23C975B2'/%3E%3Crect x='34' y='34' width='18' height='18' rx='5' fill='%23F2B33D'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="assets/font.css">
+<link rel="stylesheet" href="assets/accessibilita.css">
+<script src="assets/accessibilita.js"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Famiglia Tavolo","areaServed":"Catania","telephone":"+39 349 699 1941","email":"teampvtads@gmail.com","sameAs":["https://www.instagram.com/hellotavolo/","https://www.tiktok.com/@hellotavolo_it"],
+{"@context":"https://schema.org","@type":"Organization","name":"Famiglia Tavolo","areaServed":"Catania","telephone":"+39 349 699 1941","email":"teampvtads@gmail.com","sameAs":["https://www.instagram.com/hellotavolo_it/","https://www.tiktok.com/@hellotavolo_it"],
 "makesOffer":[{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Tavolo","applicationCategory":"BusinessApplication"}},{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Vassoio","applicationCategory":"BusinessApplication"}},{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Poltrona","applicationCategory":"BusinessApplication"}},{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Bancone","applicationCategory":"BusinessApplication"}}]}
 </script>
 <style>
@@ -26,7 +26,7 @@
   --ink:#121316; --muto:#5E6067; --muto-s:#A3A6AD;
   --tavolo:#3FA37A; --vassoio:#E07A52; --poltrona:#C975B2; --bancone:#F2B33D;
   --tavolo-d:#257652; --vassoio-d:#A94A28; --poltrona-d:#8E3F7C; --bancone-d:#8F6200;
-  --wa:#1FA855;
+  --wa:#107C41;
   --display:"Syne","Arial Black",system-ui,sans-serif;
   --body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
@@ -39,7 +39,6 @@ body{margin:0;background:var(--cenere);color:var(--ink);font-family:var(--body);
 img,svg{max-width:100%}
 a{color:inherit}
 button{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--bancone);outline-offset:3px;border-radius:6px}
 .wrap{max-width:1240px;margin:0 auto;padding-left:var(--gut);padding-right:max(20px,env(safe-area-inset-right,0px))}
 h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:.98;letter-spacing:-.02em;text-wrap:balance}
 p{margin:0}
@@ -50,7 +49,7 @@ p{margin:0}
 .btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:15px 24px;font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s var(--ease),background .2s,box-shadow .2s;white-space:nowrap}
 .btn:hover{transform:translateY(-2px)}
 .btn-chiaro{background:#F2F1EE;color:var(--lava)}
-.btn-wa{background:var(--wa);color:#fff;box-shadow:0 10px 30px -10px rgba(31,168,85,.7)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 10px 30px -10px rgba(16,124,65,.7)}
 .btn-linea{border:1.5px solid currentColor;background:transparent}
 .btn svg{width:18px;height:18px;flex:none}
 
@@ -58,14 +57,25 @@ p{margin:0}
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .3s,backdrop-filter .3s,border-color .3s;border-bottom:1px solid transparent}
 .nav.su{background:rgba(20,21,24,.78);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border-color:rgba(255,255,255,.08)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px;color:#F2F1EE}
-.marchio{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.01em}
+.marchio{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.02em;white-space:nowrap}
 .quad{display:grid;grid-template-columns:1fr 1fr;gap:3px;width:28px;height:28px;flex:none}
 .quad i{border-radius:5px;transition:transform .4s var(--ease)}
 .marchio:hover .quad i:nth-child(1){transform:translate(-2px,-2px)}.marchio:hover .quad i:nth-child(2){transform:translate(2px,-2px)}.marchio:hover .quad i:nth-child(3){transform:translate(-2px,2px)}.marchio:hover .quad i:nth-child(4){transform:translate(2px,2px)}
-.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-weight:600;font-size:15px}
-.nav ul a{text-decoration:none;opacity:.72;transition:opacity .2s}
-.nav ul a:hover{opacity:1}
+.nav .wrap nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-weight:600;font-size:15px}
+.nav .wrap nav ul a{text-decoration:none;opacity:.82;transition:opacity .2s}
+.nav .wrap nav ul a:hover{opacity:1}
 .nav .btn{padding:10px 18px;font-size:14.5px}
+.menu-btn{display:none;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:#F2F1EE;border-radius:12px;width:46px;height:46px;cursor:pointer;place-items:center}
+.menu-btn svg{width:22px;height:22px}
+.menu-tel{position:fixed;top:calc(72px + env(safe-area-inset-top,0px));left:0;right:0;z-index:49;background:var(--lava);border-bottom:1px solid var(--linea-s);padding:8px var(--gut) 18px}
+.menu-tel ul{list-style:none;margin:0;padding:0;display:grid}
+.menu-tel a{display:block;padding:14px 4px;color:#F2F1EE;text-decoration:none;font-family:var(--display);font-weight:700;font-size:22px;border-bottom:1px solid var(--linea-s)}
+.destra{display:flex;gap:10px;align-items:center}
+.pausa{border:1px solid var(--linea-s);background:transparent;color:#C9CBD0;border-radius:99px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:8px}
+.pausa svg{width:14px;height:14px}
+html.pausa .nastro .scorre{animation-play-state:paused}
+.legali{display:flex;gap:18px;flex-wrap:wrap}
+.legali a{color:#C9CBD0}
 
 /* ---------- apertura ---------- */
 .hero{padding-top:calc(130px + env(safe-area-inset-top,0px));padding-bottom:0;overflow:hidden}
@@ -73,14 +83,14 @@ p{margin:0}
 .hero .eyebrow{color:var(--muto-s);display:flex;align-items:center;gap:10px}
 .hero .eyebrow .pt{width:8px;height:8px;border-radius:50%;background:var(--tavolo);box-shadow:0 0 0 0 var(--tavolo);animation:pulsa 2s infinite}
 @keyframes pulsa{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
-.hero h1{font-size:clamp(42px,6.4vw,92px);font-weight:800;margin-top:22px;letter-spacing:-.035em}
+.hero h1{font-size:clamp(34px,4.9vw,72px);font-weight:800;margin-top:22px;letter-spacing:-.04em;line-height:1.02}
 .hero h1 .giro{display:block;height:1.08em;overflow:hidden;position:relative;font-size:.9em}
 .hero h1 .giro span{display:inline-block;white-space:nowrap;transition:transform .7s var(--ease),opacity .5s;color:var(--c,var(--tavolo))}
 .hero .sotto{font-size:clamp(18px,1.6vw,21px);color:#C9CBD0;max-width:52ch;margin-top:26px}
 .hero .azioni{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
 .prove{display:flex;gap:28px;flex-wrap:wrap;margin-top:44px;padding-top:26px;border-top:1px solid var(--linea-s);max-width:560px}
 .prove div{font-size:14px;color:var(--muto-s)}
-.prove b{display:block;font-family:var(--display);font-size:24px;color:#F2F1EE;letter-spacing:-.01em}
+.prove b{display:block;font-family:var(--display);font-size:21px;color:#F2F1EE;letter-spacing:-.01em}
 
 /* tablet */
 .scena{perspective:1600px;position:relative;min-width:0}
@@ -91,21 +101,21 @@ p{margin:0}
 .s-barra{display:flex;align-items:center;gap:9px;padding:11px 14px;background:#fff;border-bottom:1px solid #E4E3DE}
 .s-logo{width:26px;height:26px;border-radius:8px;background:var(--c);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:14px;transition:background .5s}
 .s-barra b{font-size:14px}
-.s-barra .s-ut{margin-left:auto;font-size:11.5px;color:#777;border:1px solid #E4E3DE;border-radius:99px;padding:3px 10px}
-.s-tabs{display:flex;gap:16px;padding:9px 14px 0;background:#fff;border-bottom:1px solid #E4E3DE;font-size:12px;color:#888;white-space:nowrap;overflow:hidden}
+.s-barra .s-ut{margin-left:auto;font-size:11.5px;color:#5E6067;border:1px solid #E4E3DE;border-radius:99px;padding:3px 10px}
+.s-tabs{display:flex;gap:16px;padding:9px 14px 0;background:#fff;border-bottom:1px solid #E4E3DE;font-size:12px;color:#5E6067;white-space:nowrap;overflow:hidden}
 .s-tabs i{font-style:normal;padding-bottom:8px}
 .s-tabs i.on{color:var(--ink);font-weight:700;box-shadow:inset 0 -2px 0 var(--c)}
 .s-corpo{padding:12px;display:grid;gap:8px;align-content:start;flex:1;overflow:hidden}
 .s-kp{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
 .s-kp div{background:#fff;border:1px solid #E4E3DE;border-radius:10px;padding:8px 10px}
 .s-kp b{display:block;font-family:var(--display);font-size:20px;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
-.s-kp span{font-size:11px;color:#888}
+.s-kp span{font-size:11px;color:#5E6067}
 .s-riga{background:#fff;border:1px solid #E4E3DE;border-radius:10px;padding:9px 11px;display:flex;align-items:center;gap:10px;opacity:0;transform:translateY(8px);transition:opacity .45s,transform .45s var(--ease)}
 .s-riga.vista{opacity:1;transform:none}
 .s-riga .o{font-family:var(--mono);font-weight:700;font-size:12px;min-width:46px}
 .s-riga .m{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .chip{font-size:11px;font-weight:700;border-radius:99px;padding:3px 9px;white-space:nowrap;transition:background .35s,color .35s}
-.chip.att{background:#F4E6CF;color:#9A5D0C}.chip.ok{background:#DAEEE3;color:#1F7A4E}.chip.info{background:#DFE8F4;color:#2D5B8A}.chip.no{background:#F6DCD6;color:#B3402F}
+.chip.att{background:#F4E6CF;color:#7F4C08}.chip.ok{background:#DAEEE3;color:#17663F}.chip.info{background:#DFE8F4;color:#24507D}.chip.no{background:#F6DCD6;color:#963223}
 .sel-prod{display:flex;gap:8px;margin-top:22px;position:relative;z-index:2;flex-wrap:wrap}
 .sel-prod button{border:1px solid var(--linea-s);background:rgba(255,255,255,.03);color:#C9CBD0;border-radius:99px;padding:8px 16px;font-weight:700;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .25s}
 .sel-prod button i{width:9px;height:9px;border-radius:50%;background:var(--c)}
@@ -114,7 +124,7 @@ p{margin:0}
 
 /* nastro dei mestieri */
 .nastro{margin-top:90px;border-top:1px solid var(--linea-s);overflow:hidden;padding-block:22px;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.nastro .scorre{display:flex;gap:44px;width:max-content;animation:scorri 38s linear infinite;font-family:var(--display);font-weight:700;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.01em;color:#6B6E76}
+.nastro .scorre{display:flex;gap:44px;width:max-content;animation:scorri 38s linear infinite;font-family:var(--display);font-weight:700;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.01em;color:#8F929A}
 .nastro .scorre span{display:flex;align-items:center;gap:44px;white-space:nowrap}
 .nastro .scorre span::after{content:"";width:10px;height:10px;border-radius:3px;background:currentColor;opacity:.5}
 .nastro .scorre span:nth-child(4n+1){color:#DCDDE0}
@@ -123,7 +133,7 @@ p{margin:0}
 /* ---------- sezioni ---------- */
 section{padding-block:clamp(80px,10vw,140px)}
 .testa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,72px)}
-.testa h2{font-size:clamp(38px,5.6vw,76px);font-weight:800}
+.testa h2{font-size:clamp(32px,4.4vw,60px);font-weight:800;letter-spacing:-.035em}
 .testa p{font-size:clamp(17px,1.5vw,20px);color:var(--muto);max-width:48ch}
 .testa .eyebrow{color:var(--muto);margin-bottom:18px;display:block}
 
@@ -132,8 +142,8 @@ section{padding-block:clamp(80px,10vw,140px)}
 .prodotto:nth-of-type(even) .p-testo{order:2}
 .p-testo{min-width:0}
 .p-testo .nome{display:flex;align-items:center;gap:14px}
-.p-ic{width:56px;height:56px;border-radius:16px;background:var(--c);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:28px;flex:none}
-.p-testo h3{font-size:clamp(44px,5.4vw,72px);font-weight:800;color:var(--cd)}
+.p-ic{width:56px;height:56px;border-radius:16px;background:var(--c);color:var(--lava);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:28px;flex:none}
+.p-testo h3{font-size:clamp(38px,4.4vw,58px);font-weight:800;color:var(--cd);letter-spacing:-.035em}
 .p-testo .per{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muto);margin-top:18px}
 .p-testo .frase{font-size:clamp(20px,2vw,26px);font-weight:600;line-height:1.3;margin-top:12px;max-width:30ch;letter-spacing:-.01em}
 .p-testo ul{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
@@ -153,9 +163,9 @@ section{padding-block:clamp(80px,10vw,140px)}
 .mappa{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
 .tav{aspect-ratio:1;border-radius:14px;border:1.5px dashed #C9C7BF;background:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;cursor:pointer;transition:all .25s var(--ease);font-weight:700}
 .tav b{font-family:var(--display);font-size:22px}
-.tav small{font-size:11.5px;color:var(--muto);font-weight:600}
+.tav small{font-size:11.5px;color:#4A4C52;font-weight:600}
 .tav.occ{border:1.5px solid var(--c);background:color-mix(in srgb,var(--c) 14%,#fff)}
-.tav.conto{background:var(--c);color:#fff;border-color:var(--c)}.tav.conto small{color:#fff}
+.tav.conto{background:var(--cd);color:#fff;border-color:var(--cd)}.tav.conto small{color:#fff}
 .tav:hover{transform:translateY(-2px)}
 .barra-tot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:14px;border-top:1px solid var(--linea);font-weight:600;color:var(--muto);gap:10px;flex-wrap:wrap}
 .barra-tot b{font-family:var(--display);font-size:26px;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -187,6 +197,7 @@ section{padding-block:clamp(80px,10vw,140px)}
 .codice input:focus{outline:none;border-color:var(--c)}
 .codice button{border:0;border-radius:12px;background:var(--cd);color:#fff;font-weight:700;padding:0 18px;cursor:pointer}
 .esempi{display:flex;gap:6px;flex-wrap:wrap;font-size:13px;color:var(--muto);align-items:center}
+.esempi button{min-height:32px}
 .esempi button{font-family:var(--mono);font-size:12.5px;border:1px solid var(--linea);background:#fff;border-radius:8px;padding:4px 8px;cursor:pointer}
 .esito{border-radius:16px;padding:16px 18px;transition:background .3s}
 .esito strong{font-family:var(--display);font-size:30px;display:block;letter-spacing:-.01em;line-height:1}
@@ -201,7 +212,7 @@ section{padding-block:clamp(80px,10vw,140px)}
 
 /* senza internet */
 .rete{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(30px,5vw,80px);align-items:center}
-.rete h2{font-size:clamp(40px,5.6vw,78px);font-weight:800}
+.rete h2{font-size:clamp(32px,4.4vw,60px);font-weight:800;letter-spacing:-.035em}
 .rete h2 s{text-decoration-thickness:6px;text-decoration-color:var(--vassoio);color:#7E818A}
 .rete p.lead{font-size:clamp(17px,1.5vw,20px);color:#C9CBD0;margin-top:22px;max-width:46ch}
 .schema{width:100%;height:auto;display:block}
@@ -228,14 +239,14 @@ section{padding-block:clamp(80px,10vw,140px)}
 /* passi */
 .passi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:p}
 .passo{background:var(--carta);border:1px solid var(--linea);border-radius:22px;padding:26px;position:relative;overflow:hidden}
-.passo .num{font-family:var(--display);font-weight:800;font-size:76px;line-height:.8;color:transparent;-webkit-text-stroke:1.5px #B9B6AC}
+.passo .num{font-family:var(--display);font-weight:800;font-size:64px;line-height:.8;color:transparent;-webkit-text-stroke:1.5px #B9B6AC}
 .passo h3{font-size:22px;margin:18px 0 8px;letter-spacing:-.01em}
 .passo p{color:var(--muto);font-size:15.5px}
 .passo .quando{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muto);margin-top:16px}
 
 /* domande */
 .faq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,5vw,80px)}
-.faq h2{font-size:clamp(38px,5vw,66px);font-weight:800}
+.faq h2{font-size:clamp(30px,3.8vw,52px);font-weight:800;letter-spacing:-.035em}
 details{border-bottom:1px solid var(--linea)}
 details summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:22px;font-weight:700;font-size:clamp(18px,1.6vw,21px);letter-spacing:-.01em}
 details summary::-webkit-details-marker{display:none}
@@ -246,7 +257,7 @@ details p{color:var(--muto);padding-bottom:22px;max-width:62ch;font-size:16.5px}
 
 /* chiusura */
 .finale{text-align:left}
-.finale h2{font-size:clamp(48px,8.4vw,128px);font-weight:800;letter-spacing:-.04em}
+.finale h2{font-size:clamp(38px,6.4vw,96px);font-weight:800;letter-spacing:-.045em}
 .finale h2 em{font-style:normal;background:linear-gradient(90deg,var(--tavolo),var(--vassoio),var(--poltrona),var(--bancone));-webkit-background-clip:text;background-clip:text;color:transparent}
 .finale .riga{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;margin-top:56px;align-items:start}
 .finale .sotto{font-size:clamp(18px,1.6vw,21px);color:#C9CBD0;max-width:44ch}
@@ -256,7 +267,7 @@ details p{color:var(--muto);padding-bottom:22px;max-width:62ch;font-size:16.5px}
 .recapito b{font-size:19px;font-variant-numeric:tabular-nums;user-select:all}
 .recapito .az{border:1px solid var(--linea-s);background:transparent;border-radius:10px;padding:8px 12px;font-weight:700;font-size:13.5px;cursor:pointer;text-decoration:none;color:#F2F1EE}
 footer{border-top:1px solid var(--linea-s);margin-top:90px;padding-block:28px calc(36px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muto-s);font-size:14px}
-.wa-fisso{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.45);transition:transform .25s var(--ease),opacity .3s;opacity:0;pointer-events:none}
+.wa-fisso{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;width:clamp(50px,13vw,58px);height:clamp(50px,13vw,58px);border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.45);transition:transform .25s var(--ease),opacity .3s;opacity:0;pointer-events:none}
 .wa-fisso.su{opacity:1;pointer-events:auto}
 .wa-fisso:hover{transform:scale(1.06)}
 .wa-fisso svg{width:28px;height:28px}
@@ -269,13 +280,15 @@ footer{border-top:1px solid var(--linea-s);margin-top:90px;padding-block:28px ca
   .hero-grid,.testa,.prodotto,.rete,.faq,.finale .riga{grid-template-columns:minmax(0,1fr)}
   .prodotto:nth-of-type(even) .p-testo{order:0}
   .passi{grid-template-columns:1fr 1fr}
-  .nav ul{display:none}
+  .nav .wrap nav ul{display:none}
+  .menu-btn{display:grid}
   .tablet{transform:rotateY(-6deg) rotateX(4deg)}
 }
 @media (max-width:640px){
   body{font-size:16px}
+  .marchio{font-size:16px}.marchio .quad{width:24px;height:24px}
   .confronto,.passi,.punti{grid-template-columns:minmax(0,1fr)}
-  .nav .btn span{display:none}.nav .btn{padding:10px 12px}
+  .nav .btn span{display:none}.nav .btn{padding:10px 12px;min-height:46px}
   .mappa{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.tav b{font-size:18px}
   .hero{padding-top:calc(104px + env(safe-area-inset-top,0px))}
   .schermo{aspect-ratio:auto;min-height:330px}
@@ -288,24 +301,27 @@ footer{border-top:1px solid var(--linea-s);margin-top:90px;padding-block:28px ca
 }
 </style>
 </head>
-<body>
+<body data-radice="">
 <script>document.documentElement.classList.add("js")</script>
+<a class="salta" href="#inizio">Salta al contenuto</a>
 
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="marchio" href="#inizio" aria-label="Famiglia Tavolo, torna all'inizio"><span class="quad" aria-hidden="true"><i style="background:var(--tavolo)"></i><i style="background:var(--vassoio)"></i><i style="background:var(--poltrona)"></i><i style="background:var(--bancone)"></i></span>Famiglia Tavolo</a>
-    <ul><li><a href="#prodotti">Prodotti</a></li><li><a href="#rete">Senza internet</a></li><li><a href="#metodo">Come funziona</a></li><li><a href="#domande">Domande</a></li></ul>
-    <a class="btn btn-wa" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20informazioni%20sui%20gestionali%20della%20Famiglia%20Tavolo." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3Z"/></svg><span>Scrivici</span></a>
+    <nav aria-label="Principale"><ul><li><a href="#prodotti">Prodotti</a></li><li><a href="#rete">Senza internet</a></li><li><a href="#metodo">Come funziona</a></li><li><a href="#domande">Domande</a></li></ul></nav>
+    <div class="destra"><a class="btn btn-wa" aria-label="Scrivici su WhatsApp" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20informazioni%20sui%20gestionali%20della%20Famiglia%20Tavolo." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3Z"/></svg><span>Scrivici</span></a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuTel"><span class="sr-only">Menu</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
   </div>
+  <nav class="menu-tel" id="menuTel" aria-label="Menu" hidden><ul><li><a href="#prodotti">Prodotti</a></li><li><a href="#rete">Senza internet</a></li><li><a href="#metodo">Come funziona</a></li><li><a href="#domande">Domande</a></li><li><a href="#contatti">Contatti</a></li></ul></nav>
 </header>
 
-<main id="inizio">
+<main id="inizio" tabindex="-1">
 <div class="lava hero">
   <div class="wrap">
     <div class="hero-grid">
       <div>
         <p class="eyebrow"><span class="pt" aria-hidden="true"></span>Gestionali fatti a Catania</p>
-        <h1>Il gestionale che parla la lingua <span class="giro" aria-live="polite"><span id="giro">della sala.</span></span></h1>
+        <h1>Il gestionale che parla la lingua <span class="giro"><span id="giro">della sala.</span></span></h1>
         <p class="sotto">Quattro programmi per quattro mestieri: ristoranti, pasticcerie, saloni e locali notturni. Si installano sul computer del tuo locale e funzionano sul tuo Wi-Fi, anche quando internet salta.</p>
         <div class="azioni">
           <a class="btn btn-chiaro" href="#prodotti">Scegli il tuo programma</a>
@@ -315,9 +331,11 @@ footer{border-top:1px solid var(--linea-s);margin-top:90px;padding-block:28px ca
       </div>
       <div class="scena" id="scena">
         <div class="alone" aria-hidden="true"></div>
-        <div class="tablet"><div class="schermo" id="schermo" aria-label="Anteprima del programma"></div></div>
-        <div class="sel-prod" role="group" aria-label="Guarda un programma">
+        <p class="sr-only">Anteprima animata dei quattro programmi: righe di ordini, appuntamenti e ingressi che cambiano stato. Le stesse funzioni si possono provare più avanti nella pagina.</p>
+        <div class="tablet" aria-hidden="true"><div class="schermo" id="schermo"></div></div>
+        <div class="sel-prod" role="group" aria-label="Scegli il programma da vedere nell'anteprima">
           <button class="t" data-p="t" aria-pressed="true"><i></i>Tavolo</button><button class="v" data-p="v" aria-pressed="false"><i></i>Vassoio</button><button class="p" data-p="p" aria-pressed="false"><i></i>Poltrona</button><button class="b" data-p="b" aria-pressed="false"><i></i>Bancone</button>
+          <button class="pausa" id="pausa" type="button" aria-pressed="false"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg><span>Pausa animazioni</span></button>
         </div>
       </div>
     </div>
@@ -337,7 +355,7 @@ footer{border-top:1px solid var(--linea-s);margin-top:90px;padding-block:28px ca
         <ul><li>Mappa dei tavoli, comande in cucina, conto diviso e sconti</li><li>Ordine dal tavolo col QR, menu in cinque lingue e allergeni</li><li>Prenotazioni, asporto e consegne di Glovo, Deliveroo, Just Eat</li><li>HACCP con temperature, etichette e scadenze, magazzino e food cost</li><li>Turni, fidelity, eventi con preventivi e fatture elettroniche</li></ul>
         <div class="p-azioni"><a class="btn pieno" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20vedere%20Tavolo%20dal%20vivo." target="_blank" rel="noopener">Vedilo dal vivo</a></div>
       </div>
-      <div class="prova" id="provaT"></div>
+      <div class="prova" id="provaT" role="group" aria-label="Prova la sala di Tavolo"></div><p class="sr-only" style="position:absolute" id="annT" role="status" aria-live="polite"></p>
     </article>
 
     <article class="prodotto v entra" id="vassoio">
@@ -348,7 +366,7 @@ footer{border-top:1px solid var(--linea-s);margin-top:90px;padding-block:28px ca
         <ul><li>Ordini di torte e vassoi con acconto, saldo al ritiro e ricevuta</li><li>Calendario dei ritiri con Sant'Agata, Morti, Natale e Pasqua segnati</li><li>Foglio di produzione: tutti gli ordini del giorno sommati per prodotto</li><li>Scritte sulle torte e richieste particolari per il laboratorio</li><li>Conferma e "è pronto" su WhatsApp con il messaggio già scritto</li></ul>
         <div class="p-azioni"><a class="btn pieno" href="demo/vassoio.html">Prova la demo completa</a><a class="btn btn-linea" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20informazioni%20su%20Vassoio." target="_blank" rel="noopener">Informazioni</a></div>
       </div>
-      <div class="prova" id="provaV"></div>
+      <div class="prova" id="provaV" role="group" aria-label="Prova la produzione di Vassoio"></div><p class="sr-only" style="position:absolute" id="annV" role="status" aria-live="polite"></p>
     </article>
 
     <article class="prodotto p entra" id="poltrona">
@@ -359,7 +377,7 @@ footer{border-top:1px solid var(--linea-s);margin-top:90px;padding-block:28px ca
         <ul><li>Agenda a colonne per collaboratore che avvisa se l'orario è occupato</li><li>Promemoria WhatsApp del giorno dopo, con conferma 1 o 2</li><li>Tessera a timbri e scheda tecnica con la formula del colore</li><li>Magazzino di tinte e prodotti con ordine al fornitore</li><li>Cassa per collaboratore e lista dei clienti da richiamare</li></ul>
         <div class="p-azioni"><a class="btn pieno" href="demo/poltrona.html">Prova la demo completa</a><a class="btn btn-linea" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20informazioni%20su%20Poltrona." target="_blank" rel="noopener">Informazioni</a></div>
       </div>
-      <div class="prova" id="provaP"></div>
+      <div class="prova" id="provaP" role="group" aria-label="Prova l'agenda di Poltrona"></div><p class="sr-only" style="position:absolute" id="annP" role="status" aria-live="polite"></p>
     </article>
 
     <article class="prodotto b entra" id="bancone">
@@ -370,7 +388,7 @@ footer{border-top:1px solid var(--linea-s);margin-top:90px;padding-block:28px ca
         <ul><li>Liste dei PR con un codice e un QR per ogni ospite</li><li>Controllo alla porta col prezzo giusto all'ora giusta</li><li>Contatore delle persone dentro rispetto alla capienza</li><li>Tavoli con minimo spesa e bottiglie aggiunte con un tocco</li><li>Cassa del bar e provvigioni dei PR calcolate da sole</li></ul>
         <div class="p-azioni"><a class="btn pieno" href="demo/bancone.html">Prova la demo completa</a><a class="btn btn-linea" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20informazioni%20su%20Bancone." target="_blank" rel="noopener">Informazioni</a></div>
       </div>
-      <div class="prova" id="provaB"></div>
+      <div class="prova" id="provaB" role="group" aria-label="Prova la porta di Bancone"></div><p class="sr-only" style="position:absolute" id="annB" role="status" aria-live="polite"></p>
     </article>
   </div>
 </section>
@@ -471,28 +489,36 @@ footer{border-top:1px solid var(--linea-s);margin-top:90px;padding-block:28px ca
         <div class="entra"><p class="sotto">Scrivici il nome della tua attività e cosa ti serve. Passiamo a mostrarti il programma dal vivo, gratis e senza impegno.</p>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><a class="btn btn-wa" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20una%20demo%20dal%20vivo%20nel%20mio%20locale." target="_blank" rel="noopener">Scrivici su WhatsApp</a><a class="btn btn-linea" href="#prodotti" style="color:#F2F1EE">Rivedi i programmi</a></div></div>
         <div class="recapiti entra">
-          <div class="recapito"><div><span>Telefono e WhatsApp</span><b>+39 349 699 1941</b></div><button class="az" data-copia="+39 349 699 1941">Copia</button></div>
-          <div class="recapito"><div><span>Email</span><b>teampvtads@gmail.com</b></div><button class="az" data-copia="teampvtads@gmail.com">Copia</button></div>
-          <div class="recapito"><div><span>Instagram</span><b>@hellotavolo</b></div><a class="az" href="https://www.instagram.com/hellotavolo/" target="_blank" rel="noopener">Apri</a></div>
-          <div class="recapito"><div><span>TikTok</span><b>@hellotavolo_it</b></div><a class="az" href="https://www.tiktok.com/@hellotavolo_it" target="_blank" rel="noopener">Apri</a></div>
+          <div class="recapito"><div><span>Telefono e WhatsApp</span><b>+39 349 699 1941</b></div><button class="az" data-copia="+39 349 699 1941" aria-label="Copia il numero di telefono">Copia</button></div>
+          <div class="recapito"><div><span>Email</span><b>teampvtads@gmail.com</b></div><button class="az" data-copia="teampvtads@gmail.com" aria-label="Copia l'indirizzo email">Copia</button></div>
+          <div class="recapito"><div><span>Instagram</span><b>@hellotavolo_it</b></div><a class="az" href="https://www.instagram.com/hellotavolo_it/" target="_blank" rel="noopener" aria-label="Apri Instagram @hellotavolo_it">Apri</a></div>
+          <div class="recapito"><div><span>TikTok</span><b>@hellotavolo_it</b></div><a class="az" href="https://www.tiktok.com/@hellotavolo_it" target="_blank" rel="noopener" aria-label="Apri TikTok @hellotavolo_it">Apri</a></div>
         </div>
       </div>
-      <footer><span>© <span id="anno">2026</span> Famiglia Tavolo · Tavolo, Vassoio, Poltrona, Bancone · Catania</span><span>I programmi non sostituiscono il registratore telematico.</span></footer>
+      <footer><span>© <span id="anno">2026</span> Famiglia Tavolo · Tavolo, Vassoio, Poltrona, Bancone · Catania</span><nav class="legali" aria-label="Note legali"><a href="privacy.html">Privacy policy</a><a href="accessibilita.html">Accessibilità</a></nav><span>I programmi non sostituiscono il registratore telematico.</span></footer>
     </div>
   </section>
 </div>
 </main>
 
-<a class="wa-fisso" id="waFisso" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20informazioni%20sui%20gestionali%20della%20Famiglia%20Tavolo." target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3Z"/></svg></a>
+<aside aria-label="Contatto rapido"><a class="wa-fisso" id="waFisso" href="https://wa.me/393496991941?text=Ciao!%20Vorrei%20informazioni%20sui%20gestionali%20della%20Famiglia%20Tavolo." target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3Z"/></svg></a></aside>
 
 <script>
 (()=>{
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const fermo=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let fermo=matchMedia("(prefers-reduced-motion: reduce)").matches||document.documentElement.classList.contains("a11y-fermo");
 const eur=n=>n.toLocaleString("it-IT",{style:"currency",currency:"EUR"});
 const SPUNTA='<svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.6"><path d="M3 8.5 6.5 12 13 4"/></svg>';
 document.getElementById("anno").textContent=new Date().getFullYear();
 
+/* menu del telefono */
+const mb=$("#menuBtn"),mt=$("#menuTel");
+const menu=si=>{mt.hidden=!si;mb.setAttribute("aria-expanded",String(si));if(si)mt.querySelector("a").focus()};
+mb.addEventListener("click",()=>menu(mt.hidden));
+mt.addEventListener("click",e=>{if(e.target.closest("a"))menu(false)});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!mt.hidden){menu(false);mb.focus()}});
+/* chi usa un lettore di schermo sa che il link apre una nuova scheda */
+document.querySelectorAll('a[target="_blank"]').forEach(a=>{if(!a.querySelector(".nuova"))a.insertAdjacentHTML("beforeend",'<span class="sr-only nuova"> (si apre in una nuova scheda)</span>')});
 /* navigazione e pulsante WhatsApp */
 const nav=$("#nav"),wa=$("#waFisso");
 const suScroll=()=>{const y=scrollY;nav.classList.toggle("su",y>20);wa.classList.toggle("su",y>innerHeight*.9)};
@@ -531,7 +557,12 @@ function mostra(k){cur=k;scenaT.forEach(clearTimeout);scenaT=[];const d=SCENE[k]
   righe.forEach((el,i)=>scenaT.push(setTimeout(()=>el.classList.add("vista"),fermo?0:250+i*260)));
   righe.forEach((el,i)=>scenaT.push(setTimeout(()=>{const r=d.righe[i],c=el.querySelector(".chip");c.className="chip "+r[5];c.textContent=r[4]},fermo?0:1500+i*520)));
 }
-document.querySelector(".sel-prod").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;auto=false;clearInterval(giroT);mostra(b.dataset.p)});
+document.querySelector(".sel-prod").addEventListener("click",e=>{const b=e.target.closest("button[data-p]");if(!b)return;auto=false;clearInterval(giroT);mostra(b.dataset.p)});
+const pb=$("#pausa");
+function pausa(si){auto=!si;pb.setAttribute("aria-pressed",String(si));pb.querySelector("span").textContent=si?"Riprendi animazioni":"Pausa animazioni";document.documentElement.classList.toggle("pausa",si)}
+pb.addEventListener("click",()=>pausa(pb.getAttribute("aria-pressed")!=="true"));
+document.addEventListener("accessibilita",e=>{fermo=!!e.detail.fermo||matchMedia("(prefers-reduced-motion: reduce)").matches;if(fermo)pausa(true)});
+if(fermo)pausa(true);
 mostra("t");
 if(document.fonts)document.fonts.ready.then(()=>{giro.style.fontSize="";const box=giro.parentElement.clientWidth;if(giro.scrollWidth>box)giro.style.fontSize=(box/giro.scrollWidth*100-1)+"%"});
 if(!fermo)giroT=setInterval(()=>{if(auto&&!document.hidden)mostra(ORD[(ORD.indexOf(cur)+1)%4])},5200);
@@ -541,17 +572,18 @@ if(!fermo)giroT=setInterval(()=>{if(auto&&!document.hidden)mostra(ORD[(ORD.index
 const tavoli=[["1",0],["2",2],["3",0],["4",1],["5",0],["6",1],["7",2],["8",0]];
 const conti={2:62.5,4:38,6:91,7:86.5};
 function provaT(){const tot=tavoli.reduce((s,[n,st])=>s+(st?conti[n]||44:0),0),occ=tavoli.filter(t=>t[1]).length;
-  $("#provaT").innerHTML=`<h4>Sala interna <small>tocca un tavolo: libero › occupato › conto</small></h4><div class="mappa">${tavoli.map(([n,st],i)=>`<button class="tav ${st===1?"occ":st===2?"conto":""}" data-i="${i}" aria-label="Tavolo ${n}"><b>${n}</b><small>${st===1?eur(conti[n]||44):st===2?"conto":"libero"}</small></button>`).join("")}</div>
+  $("#provaT").innerHTML=`<h4>Sala interna <small>tocca un tavolo: libero › occupato › conto</small></h4><div class="mappa">${tavoli.map(([n,st],i)=>`<button class="tav ${st===1?"occ":st===2?"conto":""}" data-i="${i}"><span class="sr-only">Tavolo </span><b>${n}</b><small>${st===1?eur(conti[n]||44):st===2?"conto":"libero"}</small><span class="sr-only">${st===1?", occupato":st===2?", conto richiesto":""}</span></button>`).join("")}</div>
   <div class="barra-tot"><span>${occ} tavoli aperti su ${tavoli.length}</span><b>${eur(tot)}</b></div>`}
-$("#provaT").addEventListener("click",e=>{const b=e.target.closest(".tav");if(!b)return;const t=tavoli[+b.dataset.i];t[1]=(t[1]+1)%3;if(t[1]===1&&!conti[t[0]])conti[t[0]]=Math.round(20+Math.random()*70)*1;provaT()});
+$("#provaT").addEventListener("click",e=>{const b=e.target.closest(".tav");if(!b)return;const i=b.dataset.i,t=tavoli[+i];t[1]=(t[1]+1)%3;if(t[1]===1&&!conti[t[0]])conti[t[0]]=Math.round(20+Math.random()*70)*1;provaT();$(`#provaT .tav[data-i="${i}"]`).focus();
+  $("#annT").textContent=`Tavolo ${t[0]}: ${["libero","occupato","conto richiesto"][t[1]]}. Totale aperto ${$("#provaT .barra-tot b").textContent}.`});
 provaT();
 
 // Vassoio: spunta la produzione
 const prod=[["Frutta martorana","4,5 kg",false],["Pupi di zucchero","21 pz",false],["Ossa dei morti","3 kg",true],["Cannoli siciliani","36 pz",false]];
 function provaV(){const f=prod.filter(p=>p[2]).length;
-  $("#provaV").innerHTML=`<h4>Da produrre · Festa dei Morti <small>${f} di ${prod.length} pronti</small></h4><div class="lista-prod">${prod.map((p,i)=>`<div class="voce ${p[2]?"fatto":""}" role="checkbox" aria-checked="${p[2]}" tabindex="0" data-i="${i}"><span class="box">${SPUNTA}</span><span class="n">${p[0]}</span><span class="q">${p[1]}</span></div>`).join("")}</div>
+  $("#provaV").innerHTML=`<h4>Da produrre · Festa dei Morti <small>${f} di ${prod.length} pronti</small></h4><div class="lista-prod">${prod.map((p,i)=>`<div class="voce ${p[2]?"fatto":""}" role="checkbox" aria-checked="${p[2]}" tabindex="0" data-i="${i}"><span class="box" aria-hidden="true">${SPUNTA}</span><span class="n">${p[0]}</span><span class="q">${p[1]}</span></div>`).join("")}</div>
   <span class="scritta">✎ “Auguri Nonno Pippo” · ritiro ore 17:30</span><div class="barra-tot"><span>Ordini con acconto</span><b>23</b></div>`}
-const tocV=e=>{const v=e.target.closest(".voce");if(!v)return;const p=prod[+v.dataset.i];p[2]=!p[2];provaV();const n=$(`#provaV .voce[data-i="${v.dataset.i}"]`);if(n&&e.type==="keydown")n.focus()};
+const tocV=e=>{const v=e.target.closest(".voce");if(!v)return;const p=prod[+v.dataset.i];p[2]=!p[2];provaV();const n=$(`#provaV .voce[data-i="${v.dataset.i}"]`);if(n)n.focus();$("#annV").textContent=`${p[0]}: ${p[2]?"pronto":"da fare"}. ${prod.filter(x=>x[2]).length} di ${prod.length} pronti.`};
 $("#provaV").addEventListener("click",tocV);$("#provaV").addEventListener("keydown",e=>{if(e.key===" "||e.key==="Enter"){e.preventDefault();tocV(e)}});
 provaV();
 
@@ -559,14 +591,16 @@ provaV();
 let pStato=0;
 function provaP(){const k1="var(--poltrona)",k2="#4E8FB8";
   $("#provaP").innerHTML=`<h4>Martedì · agenda <small>${pStato===2?"Laura ha confermato":"tocca “Manda promemoria”"}</small></h4>
-  <div class="agenda"><div class="h"></div><div class="h"><i style="background:${k1}"></i>Giusy</div><div class="h"><i style="background:${k2}"></i>Marco</div>
+  <div class="agenda" aria-label="Agenda di martedì: Giusy alle 9 Laura Caruso colore e piega, alle 11 Alessia taglio; Marco alle 9 Davide Arena, alle 10 Kevin" role="img"><div class="h"></div><div class="h"><i style="background:${k1}"></i>Giusy</div><div class="h"><i style="background:${k2}"></i>Marco</div>
   <div class="ore">${["09","10","11"].map(h=>`<div>${h}:00</div>`).join("")}</div>
   <div class="col">${[0,1,2].map(()=>`<div class="slot"></div>`).join("")}<div class="app" style="--k:${k1};top:4px;height:80px"><b>${pStato===2?"✓ ":""}Laura Caruso</b>Colore + piega</div><div class="app" style="--k:${k1};top:92px;height:38px"><b>Alessia P.</b>Taglio</div></div>
   <div class="col">${[0,1,2].map(()=>`<div class="slot"></div>`).join("")}<div class="app" style="--k:${k2};top:4px;height:56px"><b>✓ Davide Arena</b>Taglio + barba</div><div class="app" style="--k:${k2};top:70px;height:36px"><b>Kevin Z.</b>Taglio uomo</div></div></div>
   ${pStato>=1?`<div class="wa-msg">Ciao Laura! Ti ricordiamo l'appuntamento domani alle 09:00 per colore e piega. Rispondi 1 per confermare o 2 se devi spostarlo. Salone Giusy<small>09:41 ✓✓</small></div>`:""}
   <div class="wa-risp ${pStato===2?"vista":""}">1</div>
   <div class="barra-tot"><span>${pStato===2?"Confermati 2 su 4":"Promemoria da mandare: 3"}</span>${pStato===0?`<button class="mini-btn pieno" data-a="manda">Manda promemoria</button>`:pStato===1?`<span class="chip att">In attesa di risposta…</span>`:`<button class="mini-btn" data-a="ripeti">Rifai</button>`}</div>`}
-$("#provaP").addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b)return;if(b.dataset.a==="ripeti"){pStato=0;provaP();return}pStato=1;provaP();setTimeout(()=>{pStato=2;provaP()},fermo?0:1600)});
+$("#provaP").addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b)return;if(b.dataset.a==="ripeti"){pStato=0;provaP();$('#provaP [data-a="manda"]').focus();$("#annP").textContent="Prova ricominciata";return}
+  pStato=1;provaP();$("#annP").textContent="Promemoria mandato a Laura su WhatsApp. In attesa di risposta.";
+  setTimeout(()=>{pStato=2;provaP();$('#provaP [data-a="ripeti"]').focus();$("#annP").textContent="Laura ha risposto 1: appuntamento confermato."},fermo?300:1600)});
 provaP();
 
 // Bancone: scansiona un codice
@@ -574,20 +608,21 @@ const ospiti={K7Q3M:{n:"Marta Russo",pr:"Ciccio",tipo:"Ridotto in lista",prezzo:
 let dentro=212,esitoB=null;
 function provaB(){const e=esitoB;
   $("#provaB").innerHTML=`<h4>Porta · Pre-Halloween <small>scrivi o tocca un codice</small></h4><div class="porta">
-  <div class="contatore"><b>${dentro}</b><span style="color:var(--muto);font-weight:600">/ 350 dentro</span><div class="bar"><i style="width:${dentro/350*100}%"></i></div></div>
+  <div class="contatore"><b aria-hidden="true">${dentro}</b><span class="sr-only">${dentro} persone dentro su 350</span><span style="color:var(--muto);font-weight:600" aria-hidden="true">/ 350 dentro</span><div class="bar" aria-hidden="true"><i style="width:${dentro/350*100}%"></i></div></div>
   <form class="codice" id="fB"><input id="cB" maxlength="8" autocomplete="off" placeholder="CODICE" aria-label="Codice d'ingresso"><button type="submit">Verifica</button></form>
-  <div class="esempi">Prova con: ${Object.keys(ospiti).map(c=>`<button type="button" data-c="${c}">${c}</button>`).join("")}<button type="button" data-c="ZZZ99">ZZZ99</button></div>
+  <div class="esempi" role="group" aria-label="Codici di prova">Prova con: ${Object.keys(ospiti).map(c=>`<button type="button" data-c="${c}">${c}</button>`).join("")}<button type="button" data-c="ZZZ99">ZZZ99</button></div>
   ${!e?`<div class="esito attesa"><strong>In attesa</strong><p>Con un lettore QR basta inquadrare il telefono dell'ospite.</p></div>`
    :e.k==="ok"?`<div class="esito ok"><strong>Valido</strong><p><b>${esc(e.o.n)}</b> · lista ${esc(e.o.pr)} · ${esc(e.o.tipo)} · ${e.o.prezzo?eur(e.o.prezzo):"gratis"}</p><p style="margin-top:10px"><button type="button" class="mini-btn pieno" data-entra="${e.c}">${e.o.prezzo?"Incassa e fai entrare":"Fai entrare"}</button></p></div>`
    :e.k==="dentro"?`<div class="esito ko"><strong>Già entrato</strong><p>${esc(e.o.n)} è entrato alle ${e.o.ora}. Lo stesso codice non vale due volte.</p></div>`
    :`<div class="esito ko"><strong>Non valido</strong><p>Il codice ${esc(e.c)} non è in nessuna lista di stasera.</p></div>`}</div>`}
-function verifica(c){c=String(c||"").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(-5);const o=ospiti[c];esitoB=!o?{k:"no",c}:o.dentro?{k:"dentro",c,o}:{k:"ok",c,o};provaB()}
+function annB(){const e=esitoB;$("#annB").textContent=!e?"":e.k==="ok"?`Valido: ${e.o.n}, lista ${e.o.pr}, ${e.o.prezzo?eur(e.o.prezzo):"gratis"}.`:e.k==="dentro"?`Già entrato: ${e.o.n} alle ${e.o.ora}.`:`Codice ${e.c} non valido.`}
+function verifica(c){c=String(c||"").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(-5);const o=ospiti[c];esitoB=!o?{k:"no",c}:o.dentro?{k:"dentro",c,o}:{k:"ok",c,o};provaB();annB();const en=$("#provaB [data-entra]");(en||$("#cB")).focus()}
 $("#provaB").addEventListener("submit",e=>{e.preventDefault();verifica($("#cB").value)});
-$("#provaB").addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(b){verifica(b.dataset.c);return}const en=e.target.closest("[data-entra]");if(en){const o=ospiti[en.dataset.entra];o.dentro=true;const d=new Date();o.ora=String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0");dentro++;esitoB=null;provaB()}});
+$("#provaB").addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(b){verifica(b.dataset.c);return}const en=e.target.closest("[data-entra]");if(en){const o=ospiti[en.dataset.entra];o.dentro=true;const d=new Date();o.ora=String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0");dentro++;esitoB=null;provaB();$("#cB").focus();$("#annB").textContent=`${o.n} è dentro. Persone dentro: ${dentro} su 350.`}});
 provaB();
 
 /* copia dei recapiti */
-document.addEventListener("click",e=>{const b=e.target.closest("[data-copia]");if(!b)return;const t=b.dataset.copia,ok=()=>{b.textContent="Copiato";setTimeout(()=>b.textContent="Copia",1600)};
+document.addEventListener("click",e=>{const b=e.target.closest("[data-copia]");if(!b)return;const t=b.dataset.copia,ok=()=>{b.textContent="Copiato";setTimeout(()=>b.textContent="Copia",1600)};b.setAttribute("aria-live","polite");
   if(navigator.clipboard)navigator.clipboard.writeText(t).then(ok,()=>{});});
 })();
 </script>
